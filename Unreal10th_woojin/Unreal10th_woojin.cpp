@@ -2,83 +2,120 @@
 
 
 #include <iostream>
+using namespace std;
 
-int main() 
+void TempConversion()
 {
-    int Number = 10;    //대입 연산자로 Number에 10으로 선언했다.
-    printf("Number : %d\n", Number);
-    printf("Number : %5d\n", Number);   // %5d : Number를 정수 5자리로 출력
-    Number = 20;        //대입 연산자로 Number 값을 20을 넣었다.
-    printf("Number : %d\n", Number);
-    Number = 5 + 10;    //산술 연산자 + 를 이용해서 5와 10을 더하고 그 결과를 Number에 대입한다.
-    printf("Number : %d\n", Number);
-    Number = 7 % 3;     //산술 연산자 &를 이용해서 7을 3으로 나눈 나머지를 구하고(1) 그 결과를 Number에 대입한다.
-    printf("Number : %d\n", Number);
-    
-    int Temp1 = 7;
+    //  온도변환기
+    //  - 섭씨 온도를 정수로 입력받아 화씨 온도로 변환하여 출력하는 프로그램
+    //  - 공식 : 화씨 = 섭씨 * 9 / 5 +32
 
-    Number += Temp1;    //Number와 Temp1의 값을 더하고 그 결과를 Number에 덮어쓴다. (Number = 8)
-    printf("Number : %d\n", Number);
-    Number *= Temp1;    //Number와 Temp1의 값을 곱하고 그 결과를 Number에 덮어쓴다. (Number = 56)
-    printf("Number : %d\n", Number);
+    int Cel = 0;
+    int Fah = 0;
+    printf("섭씨 온도를 입력하세요 : ");
+    cin >> Cel;
 
-    Number--;   //(Number = 55)
-    Number--;   //(Number = 54)
-    Number--;   //(Number = 53)
-    printf("Number : %d\n", Number);
-
-    //  간단 실습
-    //  - 두 수를 입력받아 스왑하기
-    //  - 두 수를 입력받아 합을 출력하기
-    //  - 사각형의 가로, 세로를 입력받아 넓이를 출력하기
-    //  - 두 수를 입력받아 나머지를 출력하기(% 연산자를 사용한 것과 안한것 모두)
-
-    int Num1 = 0; 
-    int Num2 = 0;
-    
-    //  - 두 수를 입력받아 스왑하기
-    printf("첫번째 수를 입력하세요. : ");
-    std::cin >> Num1;
-    printf("두번째 수를 입력하세요. : ");
-    std::cin >> Num2;
-
-    printf("- 두 수를 입력 받아 스왑하기\n");
-    int Num3 = 0;
-    Num3 = Num1;
-    Num1 = Num2;
-    Num2 = Num3;
-    printf("스왑한 두 값의 결과 Num1 = %d, Num2 = %d\n",Num1 , Num2);
-
-    //  - 두수를 입력받아 합을 출력하기
-    printf("첫번째 수를 입력하세요. : ");
-    std::cin >> Num1;
-    printf("두번째 수를 입력하세요. : ");
-    std::cin >> Num2;
-
-    printf("두 수를 입력 받아 합을 출력하기\n");
-    printf("입력받은 두 수의 합 %d\n", Num1 + Num2);
-
-    //  -사각형의 가로, 세로를 입력받아 넓이를 출력하기
-    printf("사각형의 가로의 길이를 입력하세요. : ");
-    std::cin >> Num1;
-    printf("사각형의 세로의 길이를 입력하세요. : ");
-    std::cin >> Num2;
-
-    printf("사각형의 넓이는 %d 입니다.\n", Num1 * Num2);
-
-    //  - 두 수를 입력받아 나머지를 출력하기(% 연산자를 사용한 것과 안한것 모두)
-    printf("첫번째 수를 입력하세요. : ");
-    std::cin >> Num1;
-    printf("두번째 수를 입력하세요. : ");
-    std::cin >> Num2;
-
-    printf("두 수를 입력 받아 나머지를 출력하기\n");
-    printf("첫번째 입력한 수를 두번째 입력한 수로 나눈 나머지의 값(%연산자를 사용하여) : %d\n", Num1 % Num2);
-
-    int Remain = 0;
-    Remain = Num1 / Num2;
-    printf("첫번째 입력한 수를 두번째 입력한 수로 나눈 나머지의 값(%연산자를 사용하지 않고) : %d\n",Num1 - (Num2 * Remain));
+    Fah = Cel * 9 / 5 + 32;
+    printf("화씨 온도 : %d\n", Fah);
 }
+
+void TimeCalculator()
+{
+    //  시간변환기
+    //  -초를 입력 받아 시,분,초 출력하기
+
+    int Sec, Min, Hour = 0;
+    int InputSec = 0;
+
+    printf("변환하고자 하는 전체 초를 입력하세요 : ");
+    cin >> InputSec;
+
+    Hour = InputSec / 3600;
+    Min = (InputSec % 3600) / 60;
+    Sec = (InputSec % 3600) % 60;
+
+    printf("입력하신 시간은 %d시간 %d분 %d초 입니다.\n", Hour, Min, Sec);
+}
+
+void Coin()
+{
+    int Price;
+
+    printf("금액을 입력하십시오 : ");
+    cin >> Price;
+
+    int Coin500, Coin100, Coin50, Coin10;
+
+    Coin500 = Price / 500;  //500원의 개수
+    Coin100 = (Price - (Coin500 * 500)) / 100;  //100원의 개수
+    Coin50  = (Price - (Coin500 * 500) - (Coin100 * 100)) / 50;  //50원의 개수
+    Coin10 = (Price - (Coin500 * 500) - (Coin100 * 100) - (Coin50 * 50)) / 10;  //10원의 개수
+
+    printf("입력한 금액에 필요한 각 동전의 개수\n");
+    printf("500원 : %d개 , 100원 : %d개 , 50원 : %d개 , 10원 : %d개 \n", Coin500,Coin100,Coin50,Coin10);
+
+}
+
+void Digits()
+{
+    int Num;
+    int Hun, Dec, One;
+    printf("세자리 숫자를 입력하세요 : ");
+    cin >> Num; 
+    Hun = Num / 100;
+    Dec = (Num - (Hun * 100)) / 10;
+    One = Num - (Hun * 100) - (Dec * 10);
+    printf("입력한 수의 100의 자리 : %d , 10의 자리 : %d , 1의 자리 : %d \n",Hun,Dec,One);
+    printf("각 자리 수의 합 : %d\n", Hun + Dec + One);
+}
+
+void FileIndex()
+{
+    int Mega, Killo, Byte;
+
+    printf("파일 크기를 입력하세요.(MB단위) : ");
+    cin >> Mega;
+
+    Killo = 1024 * Mega;
+    Byte = 1024 * 1024 * Mega;
+    
+    printf("%d MB = %d KB = %d Byte\n", Mega,Killo,Byte);
+
+}
+
+void WeNeedTiles()
+{
+    int Length, Width;  //가로, 세로
+    int TileSize = 30;
+ 
+    printf("방의 가로 , 세로 길이 입력 : ");
+    cin >> Length >> Width;
+
+    //int LengthCount = (Width + (TileSize - 1)) / TileSize;
+    //int WidthCount = (Length + (TileSize - 1)) / TileSize;
+
+    int LengthCount = (Length - 1) / 30 + 1;
+    int WidthCount = (Width - 1) / 30 + 1;
+
+
+
+    printf("필요한 타일의 개수 : %d개\n",LengthCount * WidthCount);
+   
+}
+
+int main()
+{
+    //TempConversion();
+    //TimeCalculator();
+    //Coin();
+    //Digits();
+    //FileIndex();
+    WeNeedTiles();
+}
+
+
+
+
 
     // 변수(Variable)
     // - 변하는 숫자

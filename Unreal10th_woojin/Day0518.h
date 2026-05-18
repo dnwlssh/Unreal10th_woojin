@@ -24,3 +24,82 @@
 
     /* 언리얼 코딩 표준 */
     //https://dev.epicgames.com/documentation/unreal-engine/epic-cplusplus-coding-standard-for-unreal-engine?lang=ko
+
+
+
+/* int main()
+{
+    int Number = 10;    //대입 연산자로 Number에 10으로 선언했다.
+    printf("Number : %d\n", Number);
+    printf("Number : %5d\n", Number);   // %5d : Number를 정수 5자리로 출력
+    Number = 20;        //대입 연산자로 Number 값을 20을 넣었다.
+    printf("Number : %d\n", Number);
+    Number = 5 + 10;    //산술 연산자 + 를 이용해서 5와 10을 더하고 그 결과를 Number에 대입한다.
+    printf("Number : %d\n", Number);
+    Number = 7 % 3;     //산술 연산자 &를 이용해서 7을 3으로 나눈 나머지를 구하고(1) 그 결과를 Number에 대입한다.
+    printf("Number : %d\n", Number);
+
+    int Temp1 = 7;
+
+    Number += Temp1;    //Number와 Temp1의 값을 더하고 그 결과를 Number에 덮어쓴다. (Number = 8)
+    printf("Number : %d\n", Number);
+    Number *= Temp1;    //Number와 Temp1의 값을 곱하고 그 결과를 Number에 덮어쓴다. (Number = 56)
+    printf("Number : %d\n", Number);
+
+    Number--;   //(Number = 55)
+    Number--;   //(Number = 54)
+    Number--;   //(Number = 53)
+    printf("Number : %d\n", Number);
+
+    //  간단 실습
+    //  - 두 수를 입력받아 스왑하기
+    //  - 두 수를 입력받아 합을 출력하기
+    //  - 사각형의 가로, 세로를 입력받아 넓이를 출력하기
+    //  - 두 수를 입력받아 나머지를 출력하기(% 연산자를 사용한 것과 안한것 모두)
+
+    int Num1 = 0;
+    int Num2 = 0;
+
+    //  - 두 수를 입력받아 스왑하기
+    printf("첫번째 수를 입력하세요. : ");
+    std::cin >> Num1;
+    printf("두번째 수를 입력하세요. : ");
+    std::cin >> Num2;
+
+    printf("- 두 수를 입력 받아 스왑하기\n");
+    int Num3 = 0;
+    Num3 = Num1;
+    Num1 = Num2;
+    Num2 = Num3;
+    printf("스왑한 두 값의 결과 Num1 = %d, Num2 = %d\n",Num1 , Num2);
+
+    //  - 두수를 입력받아 합을 출력하기
+    printf("첫번째 수를 입력하세요. : ");
+    std::cin >> Num1;
+    printf("두번째 수를 입력하세요. : ");
+    std::cin >> Num2;
+
+    printf("두 수를 입력 받아 합을 출력하기\n");
+    printf("입력받은 두 수의 합 %d\n", Num1 + Num2);
+
+    //  -사각형의 가로, 세로를 입력받아 넓이를 출력하기
+    printf("사각형의 가로의 길이를 입력하세요. : ");
+    std::cin >> Num1;
+    printf("사각형의 세로의 길이를 입력하세요. : ");
+    std::cin >> Num2;
+
+    printf("사각형의 넓이는 %d 입니다.\n", Num1 * Num2);
+
+    //  - 두 수를 입력받아 나머지를 출력하기(% 연산자를 사용한 것과 안한것 모두)
+    printf("첫번째 수를 입력하세요. : ");
+    std::cin >> Num1;
+    printf("두번째 수를 입력하세요. : ");
+    std::cin >> Num2;
+
+    printf("두 수를 입력 받아 나머지를 출력하기\n");
+    printf("첫번째 입력한 수를 두번째 입력한 수로 나눈 나머지의 값(%연산자를 사용하여) : %d\n", Num1 % Num2);
+
+    int Remain = 0;
+    Remain = Num1 / Num2;
+    printf("첫번째 입력한 수를 두번째 입력한 수로 나눈 나머지의 값(%연산자를 사용하지 않고) : %d\n",Num1 - (Num2 * Remain));
+} */
