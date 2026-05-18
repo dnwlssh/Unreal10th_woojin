@@ -8,7 +8,7 @@ int main()
     std::cin >> Age;
     printf("제 나이는 [%d]살 입니다.", Age);
 
-    printf("Hello Branch Branch!\n");
+    printf("안녕하세요 Git Branch\n");
 
     // 변수(Variable)
     // - 변하는 숫자
