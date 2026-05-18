@@ -8,6 +8,8 @@ int main()
     std::cin >> Age;
     printf("제 나이는 [%d]살 입니다.", Age);
 
+    printf("Hello Branch!\n");
+
     // 변수(Variable)
     // - 변하는 숫자
     // - 컴퓨터에 값을 기억시키기 위해 만들고 사용한다.
