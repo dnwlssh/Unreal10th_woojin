@@ -37,22 +37,23 @@ void DiscountRate()
 	printf("할인된 가격 : %.0f원\n", Price - (Price * (Discount / 100)));
 }
 
-void NumberPlay()
+void NumberPlay1()
 {
 	int Num;
 	printf("숫자 입력 :");
 	cin >> Num;
-	if (Num > 0)
+	if (Num > 0)		// 조건문에서는 범위가 큰 것을 먼저 체크하는 것이 좋다.
 	{
 		printf("입력하신 숫자 [%d]는 양수입니다.\n",Num);
 	}
-	else if (Num == 0)
+	else if (Num < 0)
 	{
-		printf("입력하신 숫자 [%d]는 '0' 입니다.\n", Num);
+		printf("입력하신 숫자 [%d]는 음수입니다\n", Num);
+		
 	}
 	else
 	{
-		printf("입력하신 숫자 [%d]는 음수입니다.\n", Num);
+		printf("입력하신 숫자 [%d]는 '0'입니다.\n", Num);
 	}
 }
 
@@ -86,7 +87,7 @@ void NumberPlay3()
 	}
 	else
 	{
-		printf("두 수가 같습습니다.\n");
+		printf("두 수가 같습니다.\n");
 	}
 }
 
@@ -95,7 +96,7 @@ void AndOrNot1()
 	int Age, Height;
 	printf("나이와 키 입력 :");
 	cin >> Age >> Height;
-	if ((Age > 6) && (Height > 120))
+	if ((Age >= 6) && (Height >= 120))
 	{
 		printf("탑승 가능\n");
 	}
@@ -172,6 +173,7 @@ int main()
 	// 2. 점수를 입력 받아 90점 이상은 A, 80점 이상은 B, 70점 이상은 C, 60점 이상은 D, 그 이하는 F라고 출력하기
 	// 3. 세 과목의 점수를 입력 받아, 세 과목의 평균점이 60점 이상이면 "합격", 아니면 "불합격"을 출력하는 프로그램을 작성하기
 	//		한 과목이라도 40점 미만이면 불합격 출력하기
-
-	AndOrNot3();
+	
+	//NumberPlay2();
+	AndOrNot1();
 }
