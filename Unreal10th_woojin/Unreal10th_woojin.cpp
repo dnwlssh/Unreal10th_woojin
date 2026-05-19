@@ -4,176 +4,185 @@
 #include <iostream>
 using namespace std;
 
-//간단 실습
-// // 1. 원의 반지름 입력 받고 넓이 구하기
-// 2. 3개의 값을 입력 받고 평균값 구하기
-// 3. 정가와 할인율을 입력 받고 할인된 가격 구하기
-
-void CircleArea()
+void MaxMin()
 {
-	float radius;
-	float PI;
-	PI = 3.141592;
-	printf("반지름 입력 : ");
-	cin >> radius;
-	printf("원의 넓이 : %.2f\n", PI * radius * radius);
+	int Num1, Num2, Num3;
+	int MaxNum =0 , MinNum = 0;
+	 printf("세개의 정수를 입력 : ");
+	 cin >> Num1 >> Num2 >> Num3;
+
+	 if (Num1==Num2==Num3) // 세 수가 같을 때
+	 {
+		 MaxNum = Num1;
+		 MinNum = Num1;
+	 }
+
+	 if ((Num1 == Num2) || (Num2 == Num3) || (Num3 == Num1)) //세 수중 두개가 같을 때
+	 {
+		 if (Num1 == Num2) // 1,2가 같을 때
+		 {
+			 if (Num1 > Num3)
+			 {
+				 MaxNum = Num1;
+				 MinNum = Num3;
+			 }
+			 else
+			 {
+				 MaxNum = Num3;
+				 MinNum = Num1;
+			 }
+		 }
+		 else if (Num2 == Num3) // 2,3이 같을 때
+		 {
+			 if (Num2 > Num1)
+			 {
+				 MaxNum = Num2;
+				 MinNum = Num1;
+			 }
+			 else
+			 {
+				 MaxNum = Num1;
+				 MinNum = Num2;
+			 }
+		 }
+		 else if (Num1 == Num3) // 1,3이 같을 때
+		 {
+			 if (Num1 > Num2)
+			 {
+				 MaxNum = Num1;
+				 MinNum = Num2;
+			 }
+			 else
+			 {
+				 MaxNum = Num2;
+				 MaxNum = Num1;
+			 }
+		 }
+	 }
+
+	 if ((Num1 > Num2) && (Num1 > Num3)) // Num1이 제일 클때
+	 {
+		 MaxNum = Num1;
+
+		 if (Num2 > Num3)
+		 {
+			 MinNum = Num3;
+		 }
+		 else
+		 {
+			 MinNum = Num2;
+		 }
+	 }
+	 else if ((Num2 > Num3) && (Num2 > Num1)) // Num2이 제일 클 때
+	 {
+		 MaxNum = Num2;
+
+		 if (Num1 > Num3)
+		 {
+			 MinNum = Num3;
+		 }
+		 else
+		 {
+			 MinNum = Num1;
+		 }
+	 }
+	 else if ((Num3 > Num1) && (Num3 > Num2)) // Num3가 제일 클 때
+	 {
+		 MaxNum = Num3;
+		 
+		 if (Num1 > Num2)
+		 {
+			 MinNum = Num2;
+		 }
+		 else
+		 {
+			 MinNum = Num1;
+		 }
+	 }
+	 
+	 printf("입력한 수중 가장 큰 수는 [%d]. 가장 작은 수는 [%d]\n", MaxNum, MinNum);
 }
 
-void Average()
+void CanWeMakeTriangle()
 {
-	float Num1, Num2, Num3;
-	float Ave;	//왠만하면 변수를 선언해주는게 좋다.
-	printf("각 값 입력 :");
-	cin >> Num1 >> Num2 >> Num3;
-	Ave = (Num1 + Num2 + Num3) / 3.0;
-	printf("세 값의 평균 : %.2f\n", Ave);
-}
+	int line1, line2, line3;
+	printf("세 선분의 길이 입력 : ");
+	cin >> line1 >> line2 >> line3;
 
-void DiscountRate()
-{
-	float Price,Discount;
-	printf("정가와 할인율 입력 : ");
-	cin >> Price >> Discount;
-	printf("할인된 가격 : %.0f원\n", Price - (Price * (Discount / 100)));
-}
-
-void NumberPlay1()
-{
-	int Num;
-	printf("숫자 입력 :");
-	cin >> Num;
-	if (Num > 0)		// 조건문에서는 범위가 큰 것을 먼저 체크하는 것이 좋다.
+	if ((line1 < line2 + line3) && (line2 < line1 + line3) && (line3 < line1 + line2))
 	{
-		printf("입력하신 숫자 [%d]는 양수입니다.\n",Num);
-	}
-	else if (Num < 0)
-	{
-		printf("입력하신 숫자 [%d]는 음수입니다\n", Num);
-		
+		printf("삼각형 가능\n");
 	}
 	else
 	{
-		printf("입력하신 숫자 [%d]는 '0'입니다.\n", Num);
+		printf("삼각형 불가능\n");
 	}
 }
 
-void NumberPlay2()
+void MiniCalculator()
 {
-	int Num;
-	printf("숫자 입력 :");
-	cin >> Num;
-	if (Num%2 == 0)
-	{
-		printf("입력하신 숫자 [%d]는 짝수입니다.\n", Num);
-	}
-	else
-	{
-		printf("입력하신 숫자 [%d]는 홀수입니다.\n", Num);
-	}
-}
+	int Num1, Num2;
+	char Operator;
+	float Sol;
+	printf("식 입력 :");
+	cin >> Num1 >> Operator >> Num2;
 
-void NumberPlay3()
-{
-	int Num1,Num2 ;
-	printf("숫자 입력 :");
-	cin >> Num1>>Num2;
-	if (Num1 > Num2)
+	switch (Operator)
 	{
-		printf("더 큰 수는 [%d].\n", Num1);
-	}
-	else if (Num1 < Num2)
-	{
-		printf("더 큰 수는 [%d].\n", Num2);
-	}
-	else
-	{
-		printf("두 수가 같습니다.\n");
-	}
-}
-
-void AndOrNot1()
-{
-	int Age, Height;
-	printf("나이와 키 입력 :");
-	cin >> Age >> Height;
-	if ((Age >= 6) && (Height >= 120))
-	{
-		printf("탑승 가능\n");
-	}
-	else
-	{
-		printf("탑승 불가능\n");
-	}
-}
-
-void AndOrNot2()
-{
-	int Score;
-	printf("점수 입력 :");
-	cin >> Score;
-	if (Score >= 90)
-	{
-		printf("A\n");
-	}
-	else if ((Score < 90) && (Score >= 80))
-	{
-		printf("B\n");
-	}
-	else if ((Score < 80) && (Score >= 70))
-	{
-		printf("C\n");
-	}
-	else if ((Score < 70) && (Score >= 60))
-	{
-		printf("D\n");
-	}
-	else
-	{
-		printf("F\n");
-	}
-}
-
-void AndOrNot3()
-{
-	int Sub1, Sub2, Sub3;
-	float SubAvg;
-	printf("각 과목 점수 입력 :");
-	cin >> Sub1 >> Sub2 >> Sub3;
-
-	SubAvg = (Sub1 + Sub2 + Sub3) / 3.0;
-
-	if (SubAvg >= 60)
-	{
-		if ((Sub1 < 40) || (Sub2 < 40) || (Sub3 < 40))
+	case '+':
+		Sol = Num1 + Num2;
+		printf("%d %c %d = %d\n", Num1, Operator, Num2, (int)Sol);
+		break;
+	case '-':
+		Sol = Num1 - Num2;
+		printf("%d %c %d = %d\n", Num1, Operator, Num2, (int)Sol);
+		break;
+	case '*':
+		Sol = Num1 * Num2;
+		printf("%d %c %d = %d\n", Num1, Operator, Num2, (int)Sol);
+		break;
+	case '/':
+		if (Num2 == 0)
 		{
-			printf("불합격\n");
+			printf("0으로 나눌 수 없습니다!\n");
+			break;
 		}
-		else
-		{
-			printf("합격\n");
-		}
-		
-	}
-	else
-	{
-		printf("불합격\n");
+		Sol = Num1 / Num2;
+		printf("%d %c %d = %.2f\n", Num1, Operator, Num2, Sol);
+		break;
+	default:
+		printf("+,-,*,/ 만 사용할 수 있습니다.\n");
 	}
 	
+
+}
+void LeapYear()
+{
+	int Year;
+	printf("연도 입력 :");
+	cin >> Year;
+
+	//연도가 4로 나누어 떨어지면 윤년이다.
+	//하지만 100으로 나누어 떨어지면 평년이다.
+	//그럼에도 400으로 나누어 떨어지면 윤년이다.
+	// 
+	//4의 배수이면서, 100으로 나누어 떨어지지 않고 ,400으로 나누어 떨어지는 수
+
+
+	if (((Year % 4 == 0) && (Year % 100 != 0)) || (Year % 400 == 0))
+	{
+		printf("%d년은 윤년이다.\n",Year);
+	}
+	else
+	{
+		printf("%d은 평년이다.\n", Year);
+	}
 }
 
 int main()
 {
-	// 조건문 간단 실습
-	// 1. 숫자를 입력 받아 양수인지 음수인지 0 인지 판단하는 코드
-	// 2. 숫자를 입력 받아 홀수인지 짝수인지 판단하는 코드
-	// 3. 두 수를 입력 받아 더 큰 수를 출력하는 코드 . 같을경우 같다고 출력.
-
-	// 논리연산자 간단 실습
-	// 1. 나이와 키를 입력 받아, 6세 이상 , 120cm 이상일 때 롤러코스터 탑승 가능, 그 외에는 불가능으로 출력하기
-	// 2. 점수를 입력 받아 90점 이상은 A, 80점 이상은 B, 70점 이상은 C, 60점 이상은 D, 그 이하는 F라고 출력하기
-	// 3. 세 과목의 점수를 입력 받아, 세 과목의 평균점이 60점 이상이면 "합격", 아니면 "불합격"을 출력하는 프로그램을 작성하기
-	//		한 과목이라도 40점 미만이면 불합격 출력하기
-	
-	//NumberPlay2();
-	AndOrNot1();
+	//MaxMin();
+	//CanWeMakeTriangle();
+	//MiniCalculator();
+	//LeapYear();
 }
