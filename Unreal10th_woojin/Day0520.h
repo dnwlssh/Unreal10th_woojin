@@ -60,7 +60,7 @@
 	};
 
 	int Direction = Up | Right; // 오른쪽 위
-	Direction = Up | Down | Left | Right; // 오른쪽 위
+	Direction = Up | Down | Left | Right;
 
 	switch (Direction)
 	{
@@ -108,4 +108,209 @@
 		printf("Hello while : %d", j);
 		j++;
 	} while (j < 5);
+
+	void NumCheck()
+{
+	int Num;
+	printf("숫자 입력 : ");
+	cin >> Num;
+
+	if (Num & 1 == 1)
+	{
+		printf("%d는 홀수입니다.\n",Num);
+	}
+	else
+	{
+		printf("%d는 짝수입니다.\n",Num);
+	}
+}
+
+void MakeEnum()
+{
+	enum Wepons
+	{
+		Sword = 1,
+		Mace = 1 << 1,
+		Halberd = 1 << 2,
+		Crossbow = 1 << 3,
+		Warhammer = 1 << 4,
+		Lance
+	};
+	const int NumOfWepons = 5;
+	int CharactorArmStaus = Sword | Mace | Halberd ;
+	int Weponchoose;
+
+	printf("무기를 선택하세요 \n1.Sword\n2.Mace\n3.Helberd\n4.Crossbow\n5.Warhammer\n6.Lance  : \n");
+	printf("무기선택 : ");  cin >> Weponchoose;
+
+	/*switch (Weponchoose)
+	{
+	case 1:
+		if ((CharactorArmStaus & Sword) != 0)
+		{
+			printf("검을 사용할 수 있습니다.\n");
+		}
+		else
+		{
+			printf("검을 사용할 수 없습니다.\n");
+		}
+		break;
+	case 2:
+		if ((CharactorArmStaus & Mace) != 0)
+		{
+			printf("메이스를 사용할 수 있습니다.\n");
+		}
+		else
+		{
+			printf("메이스를 사용할 수 없습니다.\n");
+		}
+		break;*/
+	
+	//무기 추가/삭제
+	/*printf("플레이어가 사용 가능한 무기는 다음과 같습니다.\n");
+	for (int i = 0; i < 6; i++)
+	{
+		if (CharactorArmStaus & (1 << i) != 0)
+		{
+
+		}
+	}
+}
 */
+/*
+void Loop1()
+{
+	int Sol = 0;
+	int Num = 0;
+	while (true)
+	{
+		printf("숫자 입력 : ");
+		cin >> Num;
+		if (Num == 0)
+		{
+			break;
+		}
+		Sol += Num;
+	}
+	printf("지금까지 입력 한 숫자의 합 : %d\n", Sol);
+}
+
+void Loop2()
+{
+	int MulNum;
+	printf("숫자 입력 : ");
+	cin >> MulNum;
+
+	for (int i = 1; i < 10; i++)
+	{
+		printf("%d X %d = %d\n", MulNum, i , MulNum * i);
+	}
+
+}
+
+void Loop3()
+{
+	int Num;
+	printf("숫자 입력 :");
+	cin >> Num;
+
+	printf("1부터 %d 사이에 존재하는 홀수는\n",Num);
+	for (int i = 0; i <= Num; i++)
+	{
+		if (i % 2 != 0)
+		{
+			printf("%d\n",i);
+		}
+	}
+}
+
+void Loop4()
+{
+	printf("1~100 중 7의 배수는\n");
+	for (int i = 1; i < 101; i++)
+	{
+		if (i % 7 == 0)
+		{
+			printf("%d\n", i);
+		}
+	}
+}
+
+void Loop5()
+{
+	int Num = 0, Sol = 1;
+	printf("숫자 입력 : ");
+	cin >> Num;
+	for (int i = 1; i <= Num ; i++)
+	{
+		Sol *= i;
+	}
+	printf("%d! = %d\n",Num,Sol);
+}
+
+void Loop6()
+{
+	int floor=0;
+	printf("피라미드 바닥 갯수 : ");
+	cin >> floor;
+
+	for (int i = 0; i < floor; i++)
+	{
+		for (int j = 0; j < floor - 1 - i; j++)
+		{
+			printf(" ");
+		}
+
+		for (int j = 0; j < 2 * i + 1; j++)
+		{
+			printf("*");
+		}
+		printf("\n");
+	}
+}
+*/
+
+// 랜덤
+//srand(time(0));
+//
+//int RandNumber = 0; // 랜덤의 시드값을 현재 시간으로 설정하기(프로그램 실행할 때 한번만 하면 된다.)
+//int TestCount = 10000000;
+//int Num1 = 0, Num2 = 0, Num3 = 0, Num4 = 0, Num5 = 0, Num6 = 0;
+//
+//for (int i = 0; i < TestCount; i++)
+//{
+//	RandNumber = rand() % 6 + 1;
+//	//printf("Random : %d\n", RandNumber);
+//	switch (RandNumber)
+//	{
+//	case 1:
+//		Num1++;
+//		break;
+//	case 2:
+//		Num2++;
+//		break;
+//	case 3:
+//		Num3++;
+//		break;
+//	case 4:
+//		Num4++;
+//		break;
+//	case 5:
+//		Num5++;
+//		break;
+//	case 6:
+//		Num6++;
+//		break;
+//	default:
+//		printf("ERROR!!\n");
+//	}
+//}
+//printf("1:%d\n2:%d\n3:%d\n4:%d\n5:%d\n6:%d\n", Num1, Num2, Num3, Num4, Num5, Num6);
+
+//간단 실습
+// 1. 가위 바위 보 게임 만들기
+//		- 3선승제
+//		- enum 활용
+// 2. 하이 로우
+//		- 컴퓨터가 1~100사이의 임의의 숫자를 선택하고 사용자가 맞출때 까지 입력을 받아 "더 높게", "더 낮게" 등의 힌트를 제공
+//		- 5번 안에 맞춰야 함
