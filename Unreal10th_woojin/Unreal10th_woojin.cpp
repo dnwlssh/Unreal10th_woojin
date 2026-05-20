@@ -4,185 +4,185 @@
 #include <iostream>
 using namespace std;
 
-void MaxMin()
+void NumCheck()
 {
-	int Num1, Num2, Num3;
-	int MaxNum =0 , MinNum = 0;
-	 printf("세개의 정수를 입력 : ");
-	 cin >> Num1 >> Num2 >> Num3;
+	int Num;
+	printf("숫자 입력 : ");
+	cin >> Num;
 
-	 if (Num1==Num2==Num3) // 세 수가 같을 때
-	 {
-		 MaxNum = Num1;
-		 MinNum = Num1;
-	 }
-
-	 if ((Num1 == Num2) || (Num2 == Num3) || (Num3 == Num1)) //세 수중 두개가 같을 때
-	 {
-		 if (Num1 == Num2) // 1,2가 같을 때
-		 {
-			 if (Num1 > Num3)
-			 {
-				 MaxNum = Num1;
-				 MinNum = Num3;
-			 }
-			 else
-			 {
-				 MaxNum = Num3;
-				 MinNum = Num1;
-			 }
-		 }
-		 else if (Num2 == Num3) // 2,3이 같을 때
-		 {
-			 if (Num2 > Num1)
-			 {
-				 MaxNum = Num2;
-				 MinNum = Num1;
-			 }
-			 else
-			 {
-				 MaxNum = Num1;
-				 MinNum = Num2;
-			 }
-		 }
-		 else if (Num1 == Num3) // 1,3이 같을 때
-		 {
-			 if (Num1 > Num2)
-			 {
-				 MaxNum = Num1;
-				 MinNum = Num2;
-			 }
-			 else
-			 {
-				 MaxNum = Num2;
-				 MaxNum = Num1;
-			 }
-		 }
-	 }
-
-	 if ((Num1 > Num2) && (Num1 > Num3)) // Num1이 제일 클때
-	 {
-		 MaxNum = Num1;
-
-		 if (Num2 > Num3)
-		 {
-			 MinNum = Num3;
-		 }
-		 else
-		 {
-			 MinNum = Num2;
-		 }
-	 }
-	 else if ((Num2 > Num3) && (Num2 > Num1)) // Num2이 제일 클 때
-	 {
-		 MaxNum = Num2;
-
-		 if (Num1 > Num3)
-		 {
-			 MinNum = Num3;
-		 }
-		 else
-		 {
-			 MinNum = Num1;
-		 }
-	 }
-	 else if ((Num3 > Num1) && (Num3 > Num2)) // Num3가 제일 클 때
-	 {
-		 MaxNum = Num3;
-		 
-		 if (Num1 > Num2)
-		 {
-			 MinNum = Num2;
-		 }
-		 else
-		 {
-			 MinNum = Num1;
-		 }
-	 }
-	 
-	 printf("입력한 수중 가장 큰 수는 [%d]. 가장 작은 수는 [%d]\n", MaxNum, MinNum);
-}
-
-void CanWeMakeTriangle()
-{
-	int line1, line2, line3;
-	printf("세 선분의 길이 입력 : ");
-	cin >> line1 >> line2 >> line3;
-
-	if ((line1 < line2 + line3) && (line2 < line1 + line3) && (line3 < line1 + line2))
+	if (Num & 1 == 1)
 	{
-		printf("삼각형 가능\n");
+		printf("%d는 홀수입니다.\n",Num);
 	}
 	else
 	{
-		printf("삼각형 불가능\n");
+		printf("%d는 짝수입니다.\n",Num);
 	}
 }
 
-void MiniCalculator()
+void MakeEnum()
 {
-	int Num1, Num2;
-	char Operator;
-	float Sol;
-	printf("식 입력 :");
-	cin >> Num1 >> Operator >> Num2;
-
-	switch (Operator)
+	enum Wepons
 	{
-	case '+':
-		Sol = Num1 + Num2;
-		printf("%d %c %d = %d\n", Num1, Operator, Num2, (int)Sol);
-		break;
-	case '-':
-		Sol = Num1 - Num2;
-		printf("%d %c %d = %d\n", Num1, Operator, Num2, (int)Sol);
-		break;
-	case '*':
-		Sol = Num1 * Num2;
-		printf("%d %c %d = %d\n", Num1, Operator, Num2, (int)Sol);
-		break;
-	case '/':
-		if (Num2 == 0)
+		Sword = 1,
+		Mace = 1 << 1,
+		Halberd = 1 << 2,
+		Crossbow = 1 << 3,
+		Warhammer = 1 << 4,
+		Lance
+	};
+	const int NumOfWepons = 5;
+	int CharactorArmStaus = Sword | Mace | Halberd ;
+	int Weponchoose;
+
+	printf("무기를 선택하세요 \n1.Sword\n2.Mace\n3.Helberd\n4.Crossbow\n5.Warhammer\n6.Lance  : \n");
+	printf("무기선택 : ");  cin >> Weponchoose;
+
+	/*switch (Weponchoose)
+	{
+	case 1:
+		if ((CharactorArmStaus & Sword) != 0)
 		{
-			printf("0으로 나눌 수 없습니다!\n");
+			printf("검을 사용할 수 있습니다.\n");
+		}
+		else
+		{
+			printf("검을 사용할 수 없습니다.\n");
+		}
+		break;
+	case 2:
+		if ((CharactorArmStaus & Mace) != 0)
+		{
+			printf("메이스를 사용할 수 있습니다.\n");
+		}
+		else
+		{
+			printf("메이스를 사용할 수 없습니다.\n");
+		}
+		break;*/
+	
+	//무기 추가/삭제
+	/*printf("플레이어가 사용 가능한 무기는 다음과 같습니다.\n");
+	for (int i = 0; i < 6; i++)
+	{
+		if (CharactorArmStaus & (1 << i) != 0)
+		{
+
+		}
+	}*/
+}
+
+void Loop1()
+{
+	int Sol = 0;
+	int Num = 0;
+	while (true)
+	{
+		printf("숫자 입력 : ");
+		cin >> Num;
+		if (Num == 0)
+		{
 			break;
 		}
-		Sol = Num1 / Num2;
-		printf("%d %c %d = %.2f\n", Num1, Operator, Num2, Sol);
-		break;
-	default:
-		printf("+,-,*,/ 만 사용할 수 있습니다.\n");
+		Sol += Num;
 	}
-	
+
+	/*do
+	{
+		printf("숫자 입력 : ");
+		cin >> Num;
+		Sol += Num;
+	} while (Num == 0);*/
+
+	printf("지금까지 입력 한 숫자의 합 : %d\n", Sol);
+}
+
+void Loop2()
+{
+	int MulNum;
+	printf("숫자 입력 : ");
+	cin >> MulNum;
+
+	for (int i = 1; i < 10; i++)
+	{
+		printf("%d X %d = %d\n", MulNum, i , MulNum * i);
+	}
 
 }
-void LeapYear()
+
+void Loop3()
 {
-	int Year;
-	printf("연도 입력 :");
-	cin >> Year;
+	int Num;
+	printf("숫자 입력 :");
+	cin >> Num;
 
-	//연도가 4로 나누어 떨어지면 윤년이다.
-	//하지만 100으로 나누어 떨어지면 평년이다.
-	//그럼에도 400으로 나누어 떨어지면 윤년이다.
-	// 
-	//4의 배수이면서, 100으로 나누어 떨어지지 않고 ,400으로 나누어 떨어지는 수
-
-
-	if (((Year % 4 == 0) && (Year % 100 != 0)) || (Year % 400 == 0))
+	printf("1부터 %d 사이에 존재하는 홀수는\n",Num);
+	for (int i = 0; i <= Num; i++)
 	{
-		printf("%d년은 윤년이다.\n",Year);
+		if (i % 2 != 0)
+		{
+			printf("%d\n",i);
+		}
 	}
-	else
+}
+
+void Loop4()
+{
+	printf("1~100 중 7의 배수는\n");
+	for (int i = 1; i < 101; i++)
 	{
-		printf("%d은 평년이다.\n", Year);
+		if (i % 7 == 0)
+		{
+			printf("%d\n", i);
+		}
+	}
+}
+
+void Loop5()
+{
+	int Num = 0, Sol = 1;
+	printf("숫자 입력 : ");
+	cin >> Num;
+	for (int i = 1; i <= Num ; i++)
+	{
+		Sol *= i;
+	}
+	printf("%d! = %d\n",Num,Sol);
+}
+
+void Loop6()
+{
+	int floor=0;
+	printf("피라미드 바닥 갯수 : ");
+	cin >> floor;
+
+	for (int i = 0; i < floor; i++)
+	{
+		for (int j = 0; j < floor - 1 - i; j++)
+		{
+			printf(" ");
+		}
+
+		for (int j = 0; j < 2 * i + 1; j++)
+		{
+			printf("*");
+		}
+		printf("\n");
 	}
 }
 
 int main()
 {
-	//MaxMin();
-	//CanWeMakeTriangle();
-	//MiniCalculator();
-	//LeapYear();
+	// 간단 실습
+	// 1. 0을 입력 받을 때 까지 입력 받은 숫자의 합을 출력
+	//		-while과 do while 둘다 사용
+	// 2. 입력 받은 수의 구구단 출력하기
+	// 3. 1부터 입력받은 수까지 있는 수들 중 홀수만 출력하기
+	// 4. 1 ~ 100 중에 7의 배수만 출력하기
+	// 5. 팩토리얼 계산하기
+	// 6. *으로 피라미드 모양의 삼각형 찍기
+	Loop6();
 }
+
+	
+	
