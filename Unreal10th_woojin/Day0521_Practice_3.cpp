@@ -27,12 +27,14 @@ void Practice_3()
 
 		// 홀짝 선택
 		//	플레이어가 1(홀)또는 2(짝)을 선택한다.
-		int Select = ChooseOddOrEven(Select);
+		int Select = 0;
+		Select = ChooseOddOrEven(Select);
 
 		// 결과 결정
 		//	컴퓨터가 랜덤으로 1(홀)또는 2(짝)을 선택한다.
 		//	플레이어의 선택과 결과가 일치하면 승리(이기면 배팅금의 2배 획득), 다르면 패배(배팅금 전액 잃음).
-		int Result = RandOddOrEven(Result); 	// 랜덤으로 1 or 2 고르기
+		int Result = 0;
+		Result = RandOddOrEven(Result); 	// 랜덤으로 1 or 2 고르기
 
 		printf("결과는 [%s]입니다.\n", (Result == 1) ? "홀" : "짝");
 

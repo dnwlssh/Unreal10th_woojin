@@ -25,12 +25,24 @@
     <Filter Include="소스 파일\수업">
       <UniqueIdentifier>{957cb4d6-cb00-43a6-a14c-29dac91616f9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\개인">
+      <UniqueIdentifier>{e3be319c-0896-4e5b-9a4b-5d8b3725f7dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\개인">
+      <UniqueIdentifier>{2bcbe0fb-0676-427c-b78c-7f051ceb9413}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\개인\공부">
+      <UniqueIdentifier>{6192ef6a-d666-4dd0-880c-0feac4f8859a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\개인\공부">
+      <UniqueIdentifier>{1762c6d0-ce6c-48a7-8e48-04ddef8d06a1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Day0521_Practice_1.cpp">
       <Filter>소스 파일\실습</Filter>
     </ClCompile>
-    <ClCompile Include="Unreal10th_woojin.cpp">
+    <ClCompile Include="Unreal10th_woojin_Main.cpp">
       <Filter>소스 파일\수업</Filter>
     </ClCompile>
     <ClCompile Include="Day0521_2.cpp">
@@ -41,6 +53,12 @@
     </ClCompile>
     <ClCompile Include="Day0521_Practice_3.cpp">
       <Filter>소스 파일\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="0521_.cpp">
+      <Filter>소스 파일\개인\공부</Filter>
+    </ClCompile>
+    <ClCompile Include="Day0522.cpp">
+      <Filter>소스 파일\수업</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -70,6 +88,12 @@
     </ClInclude>
     <ClInclude Include="Day0521_Practice_3.h">
       <Filter>헤더 파일\실습</Filter>
+    </ClInclude>
+    <ClInclude Include="0521_.h">
+      <Filter>헤더 파일\개인\공부</Filter>
+    </ClInclude>
+    <ClInclude Include="Day0522.h">
+      <Filter>헤더 파일\5월</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
