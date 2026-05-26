@@ -441,17 +441,22 @@ void Day0522_MainPractice4()
 		{1,0,1,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,0,1},
 		{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
 	};
-	const int StartPosition = 2;
-	Maze[1][1] = StartPosition;		  //시작 위치
-	const int EndPosition = 3;
-	Maze[7][18] = EndPosition;		// 종료 위치
 
-	const int PlayerPosition = 4; //플레이어 할당값
+	int StartX = 1, StartY = 1;		//
+	const int StartPosition = 2;	//시작 위치 '값'
+	Maze[StartY][StartX] = StartPosition;		//시작 위치 설정
+
+	const int EndPosition = 3;		//종료 위치 '값'
+	Maze[7][18] = EndPosition;		// 종료 위치 설정
+
+	int PlayerX = 0, PlayerY = 0; //플레이어의 좌표값	 //wasd 입력이 들어오면 얘네 둘이 변해야함
+	PlayerX = StartX, PlayerY = StartY;	//시작 위치와 플레이어 위치 일치화
+	const int PlayerPosition = 4; //플레이어 위치 '값' //플레이어 시작 위치 설정
+
+
 	char PlayerMoveInput; //플레이어가 입력하는 방향
 
-	int PlayerX, PlayerY; //플레이어의 좌표값	 //wasd 입력이 들어오면 얘네 둘이 변해야함
-
-	
+	// StartPosition = PlayerPosition;
 
 	//이동 방향 정의
 	enum MoveDirection
@@ -466,9 +471,6 @@ void Day0522_MainPractice4()
 	{
 
 		printf("\n=== 텍스트 미로 탈출 게임 ===\n\n");
-
-		Maze[PlayerY][PlayerX];
-
 		//게임 시작시 시작점을 플레이어 위치로 표시 (플레이어 이동시 다시 시작지점으로 바뀌어야한다)
 
 		//맵 구현
@@ -476,27 +478,30 @@ void Day0522_MainPractice4()
 		{
 			for (int j = 0; j < MazeCols; j++)
 			{
-				if ((i == PlayerX) && (j == PlayerY))
-				{
+				if ((i == PlayerX) && (j == PlayerY)) // 맵을 그리는 X,Y의 각 좌표가 플레이어의 좌표값과 같다면
+				{	// 해당 좌표 값에 P를 표시한다
 					printf(" P ");
-					Maze[i][j] = PlayerPosition;
+					Maze[i][j] = Maze[i][j];
 				}
-				switch (Maze[i][j])
+				else
 				{
-				case 0:
-					printf(" · ");
-					break;
-				case 1:
-					printf(" # ");
-					break;
-				case 2:
-					printf(" S ");
-					break;
-				case 3:
-					printf(" E ");
-					break;
-				default:
-					break;
+					switch (Maze[i][j])
+					{
+					case 0:
+						printf(" · ");
+						break;
+					case 1:
+						printf(" # ");
+						break;
+					case 2:
+						printf(" S ");
+						break;
+					case 3:
+						printf(" E ");
+						break;
+					default:
+						break;
+					}
 				}
 			}
 			printf("\n");
