@@ -100,3 +100,4 @@ int GetSum(int Number);
 
 //자리수 분리해서 합치기(입력은 제한 없음)
 int GetSum(char* NumberString);
+

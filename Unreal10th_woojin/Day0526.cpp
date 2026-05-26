@@ -15,7 +15,7 @@ void Day0526()
 
 	// 포인터 연산자
 	// - & : 주소 연산자 . 변수 앞에 붙이면 그 변수의 주소를 돌려준다.
-	// - * : 간접 참조 연산자 . 포인터 변수 앞에 붙이면 그 포인터 변수가 가리키는 주소에 있는 실제 값을 돌려준ㄷ
+	// - * : 간접 참조 연산자 . 포인터 변수 앞에 붙이면 그 포인터 변수가 가리키는 주소에 있는 실제 값을 돌려준다
 
 	int Data = 10; 
 	IntergerAddress = &Data;				// 'Data라는 변수의 주소'를 IntergerAddress에 저장해라.
@@ -43,7 +43,7 @@ void Day0526()
 
 	// 배열과 포인터
 	int Array[5] = {1,2,3,4,5};
-	int* pArray = Array;
+	int* pArray = Array;	//인티저 포인터 pArray에 배열 Array의 주소
 	Array[1];				// 배열의 두번째 요소에 접근
 	pArray + 1;				// 포인터를 이용해서 두번째 요소에 접근
 
@@ -87,7 +87,7 @@ void Day0526()
 	//*할당 하면서 '메모리 주소'를 주기 때문에 무조건 포인터 변수로 선언해야함*
 	int* Alloc = new int(5);	// int 크기로 동적 할당을 받고 초기값으로 5를 설정한 다음 그 주소를 Alloc에 저장해라. 
 	
-	*Alloc - 20;
+	*Alloc = 20;
 
 	delete Alloc;				// 다 썼으면 반드시 해제해야 한다. 메모리를 할당하고 해제하지 않으면 메모리 누수(Memory Leak)가 발생한다.
 	Alloc = nullptr;			// 댕글링 포인터 방지를 위해 꼭 하는것이 좋다.
@@ -120,22 +120,48 @@ void Day0526_PointParameter(int* Data, int Size)
 
 // 간단 실습
 // 1. 두 변수의 값을 변경하는 함수 만들기
-//		int a,b; Swap(a,b); 하면 a와 b의 값이 서로 바뀐다.
-
-void Swap(int* a, int* b) // a의 주소,b의 주소
+//		int a,b; Swap(a,b); 하면 a와 b의 값이 서로 바뀐다
+void Day0526_Practice_Swap(int* a, int* b) // a의 주소,b의 주소
 {
-	int Temp = 0;
-	Temp = *a;	// Temp의 값은 a의 주소에 있는 값.
-	*a = *b;	// a의주소에 있는 값은 b의 주소에 있는 값
-	*b = Temp;	// b의 주소에 있는 값은 Temp(a값)
+	int Temp = *a;	// Temp의 값은 a의 주소에 있는 값.
+	*a = *b;		// a의주소에 있는 값은 b의 주소에 있는 값
+	*b = Temp;		// b의 주소에 있는 값은 Temp(a값)
 
-	printf("변경 결과(A,B) -> (B,A) : (%d,%d)", *a, *b);
+	printf("변경 결과(A,B) -> (B,A) : (%d,%d)\n", *a, *b);
 }
 
 // 2. 포인터를 이용해서 배열의 최댓값 찾아보기
 //		- 인덱스 사용 금지. (Array[i] 이런식의 사용 금지)
-void PointerUsedMinMax(int* Data,int Size)
+// 포인터롤 통해서 배열의 각 자리의 요소에 접근 한 후 각 요소의 값을 비교 한후 최대값을 찾는다.
+void Day0526_Practice_PointerUsedMinMax(int* Data,int Size)
 {
-	Data =
+	int* pData = Data;		 
+	int MaxNum = *pData;	// 최대값 변수 선언 및 pData의 첫번째 요소 값으로 초기화
+	for (int i = 0; i < Size ; i++)
+	{
+		if (MaxNum < *(pData + 1))	// 최대값이 다음 요소 자리 값보다 작으면 
+		{
+			MaxNum = *(pData + 1);	// 다음 요소 자리값을 최대로 설정
+		}
+		else						//최대값이 다음 요소 자리 값보다 크면
+		{
+			pData = pData + 1;		// 다음 요소로 이동
+		}
+	}
+	printf("배열의 최대값 : %d", MaxNum);
+	
 }
+
 // 3. 포인터를 이용해서 배열의 순서를 뒤집는 함수 만들기
+void Day0526_Practice_ReverseArray(int* Array, int Size)
+{
+	int* Left = Array;					//출발지점이 배열의 첫번째 요소인 포인터 변수
+	int* Right = Array + (Size - 1);	//출발지점이 배열의 마지막 요소인 포인터 변수
+
+	while (Left < Right) //주소값은 먼저 오는게 나중오는것보다 무조건 작다. 
+	{
+		Day0526_Practice_Swap(Left, Right);
+		Left++;							//오른쪽으로 진행
+		Right--;						//왼쪽으로 진행
+	}
+}
