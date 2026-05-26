@@ -451,7 +451,7 @@ void Day0522_MainPractice4()
 
 	int PlayerX = 0, PlayerY = 0; //플레이어의 좌표값	 //wasd 입력이 들어오면 얘네 둘이 변해야함
 	PlayerX = StartX, PlayerY = StartY;	//시작 위치와 플레이어 위치 일치화
-	const int PlayerPosition = 4; //플레이어 위치 '값' //플레이어 시작 위치 설정
+	int PlayerPosition = 4; //플레이어 위치 '값' //플레이어 시작 위치 설정
 
 
 	char PlayerMoveInput; //플레이어가 입력하는 방향
@@ -480,8 +480,18 @@ void Day0522_MainPractice4()
 			{
 				if ((i == PlayerX) && (j == PlayerY)) // 맵을 그리는 X,Y의 각 좌표가 플레이어의 좌표값과 같다면
 				{	// 해당 좌표 값에 P를 표시한다
-					printf(" P ");
-					Maze[i][j] = Maze[i][j];
+					if (Maze[PlayerX][PlayerY] == EndPosition)
+					{
+						PlayerPosition = PlayerPosition - 1;
+						printf(" P ");
+						Maze[i][j] = Maze[i][j];
+					}
+					else
+					{
+						printf(" P ");
+						Maze[i][j] = Maze[i][j];
+						//if (((Maze[i + 1][j]) || (Maze[i - 1][j]) || (Maze[i][j + 1]) || (Maze[i][j - 1])) == (2))
+					}
 				}
 				else
 				{

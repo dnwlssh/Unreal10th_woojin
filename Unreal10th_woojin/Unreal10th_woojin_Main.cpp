@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <time.h>
 #include "Day0522.h"
+#include "Weekend_Practice0523.h"
 
 using namespace std;
 
@@ -21,5 +22,7 @@ int main()
 	//Day0522_Shuffle();
 	//Day0522_MainPractice1();
 	//Day0522_MainPractice3();
-	Day0522_MainPractice4();
+	//Day0522_MainPractice4();
+	Weekend0523_Dungeon();
+
 }

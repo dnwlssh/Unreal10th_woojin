@@ -60,6 +60,12 @@
     <ClCompile Include="Day0522.cpp">
       <Filter>소스 파일\수업</Filter>
     </ClCompile>
+    <ClCompile Include="Day0526.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Weekend_Practice0523.cpp">
+      <Filter>소스 파일\실습</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Day0520.h">
@@ -94,6 +100,12 @@
     </ClInclude>
     <ClInclude Include="Day0522.h">
       <Filter>헤더 파일\5월</Filter>
+    </ClInclude>
+    <ClInclude Include="Day0526.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Weekend_Practice0523.h">
+      <Filter>헤더 파일\실습</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
