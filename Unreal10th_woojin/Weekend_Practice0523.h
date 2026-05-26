@@ -67,3 +67,36 @@ bool IsWall(int X, int Y);
 /// <returns>입력 받은 방향</returns>
 MoveDirection GetMoveInput(int PlayerX, int PlayerY);
 
+/// <summary>
+/// 0.0f ~ 1.0f 사이를 리턴하는 함수
+/// </summary>
+/// <returns>0.0f ~ 1.0f 사이의 랜덤 값</returns>
+float GetRandom();
+
+/// <summary>
+/// Min ~ Max 사이의 랜덤한 값을 리턴하는 함수
+/// </summary>
+/// <param name="Min">랜덤의 최소값(포함)</param>
+/// <param name="Max">랜덤의 최대값(포함)</param>
+/// <returns>Min ~ Max 사이의 랜덤한 값</returns>
+int GetRandomRange(int Min, int Max);
+
+/// <summary>
+/// 랜덤 인카운터(전투) 발생여부 체크하는 함수
+/// </summary>
+/// <returns>true면 전투 발생, false면 전투 발생 X</returns>
+bool RandomIncounter();
+
+/// <summary>
+/// 전투 처리 함수
+/// </summary>
+/// <param name="PlayerHealth"></param>
+/// <returns></returns>
+bool Battle(int& PlayerHealth);
+
+
+//자리수 분리해서 합치기(입력은 정수형으로 제한)
+int GetSum(int Number);
+
+//자리수 분리해서 합치기(입력은 제한 없음)
+int GetSum(char* NumberString);

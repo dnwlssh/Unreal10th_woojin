@@ -15,6 +15,9 @@ const char* ShapePath = ".";
 const char* ShapeStart = "S";
 const char* ShapeEnd = "E";
 
+const float BattleRate = 0.1f;
+const int InitHealth = 100;
+int PlayerHealth = InitHealth;
 
 // 미로 배열 정의
 int Maze[MazeHeight][MazeWidth] =
@@ -80,7 +83,19 @@ void Weekend0523_Dungeon()
 		}
 		
 		//랜덤 인카운터 처리
-
+		if (RandomIncounter())
+		{
+			//전투 시작
+			if (Battle(PlayerHealth))
+			{
+				printf("당신은 승리 했습니다.\n");
+			}
+			else
+			{
+				printf("당신은 패배 했습니다.\n");
+				break;
+			}
+		}
 		}
 	}
 	else
@@ -216,3 +231,65 @@ MoveDirection GetMoveInput(int PlayerX, int PlayerY)
 	}
 	return Result;
 }
+
+float GetRandom()
+{
+	return rand() / (float)RAND_MAX;	// 0.0f ~ 1.0f
+}
+
+int GetRandomRange(int Min, int Max)
+{
+	return Min + rand()% (Max - Min + 1);
+}
+
+bool RandomIncounter()
+{
+	return GetRandom() < BattleRate; // BattleRate보다 랜덤값이 적으면 전투 발생
+}
+
+bool Battle(int& PlayerHealth)
+{
+	const float CriticalRate = 0.1f;
+	const int PlayerMinAttackPower = 5;
+	const int PlayerMaxAttackPower = 15;
+	const int EnemyMinAttackPower = 1;
+	const int EnemyMaxAttackPower = 5;
+
+	int EnemyHealth = 20;
+
+
+	printf("고블린이 나타났다!! 전투 시작!\n");
+	int Turn = 1;
+	while (PlayerHealth > 0 && EnemyHealth > 0)
+	{
+		//전투 턴 진행
+		printf("----------- 턴 %d ------------\n ",Turn);
+		printf("| Player : %3d	Enemy : %3d |\n", PlayerHealth, EnemyHealth);
+		printf("-----------------------------\n ");
+		int Damage = GetRandomRange(PlayerMinAttackPower, PlayerMaxAttackPower);
+		printf("당신의 공격 : %d의 데미지를 주었다!\n",Damage);
+		EnemyHealth -= Damage;
+		if (EnemyHealth > 0)
+		{
+			Damage = GetRandomRange(EnemyMinAttackPower, EnemyMaxAttackPower);
+			printf("적의 공격 : %d의 데미지를 주었다!\n", Damage);
+			PlayerHealth -= Damage;
+		}
+		Turn++;
+	}
+
+	return PlayerHealth > 0;	//플레이어의 체력이 남은 채  while이 끝났으면 플레이어가 이긴것
+}
+
+int GetSum(int Number)
+{
+	int Sum = 0;
+	while (Number > 0)
+	{
+		int A = Number % 10;	// 1/10로 나눈 나머지는 따로 저장하기
+		Number / 10;			// 계속 1/10로 나누기
+	}
+	return Sum;
+}
+
+
