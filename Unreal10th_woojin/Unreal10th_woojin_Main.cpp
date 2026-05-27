@@ -4,7 +4,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <time.h>
-#include "Weekend_Practice0523.h"
+#include "Day0527.h"
 
 using namespace std;
 
@@ -14,14 +14,26 @@ int main()
 	Seed = 0;		// 테스트용으로 임시로 설정
 	srand(Seed);	// 시드값 초기화
 
-	//int Array[5] = {315, 5995,2112,2,325};
-	//PointerUsedMinMax(Array,5);
-	/*int Array[7] = {1,2,3,4,5,6,7};
-	Day0526_Practice_ReverseArray(Array, 7);
-	for (int i = 0; i < 7; i++)
-	{
-		printf("%d", Array[i]);
-	}*/
-	Weekend0523_Dungeon();
+
+	
+	Day0527();
+
+	//const char* TestStirng = "Hello";
+	//char Buffer[32] = { 0, };
+	//MyStrCpy(Buffer, TestStirng);
+	//printf("Buffer의 내용문은 [%s]입니다.\n", Buffer);
+	//MyStrCat(Buffer, TestStirng);
+	//printf("Buffer의 내용문은 [%s]입니다.\n", Buffer);
+	//
+	//int Result = MyStrCmp("abc", "abc");	// 같으면 0
+	//printf("abc 와 abc 비교값 : [%d]\n", Result);
+	//Result = MyStrCmp("ab", "abc");		// 왼쪽이 작으면 -1
+	//printf("ab 와 abc 비교값 : [%d]\n", Result);
+	//Result = MyStrCmp("abb", "abc");
+	//printf("abb 와 abc 비교값 : [%d]\n", Result);
+	//Result = MyStrCmp("abc", "abb");		// 오른쪽이 작으면 +1
+	//printf("abc 와 abb 비교값 : [%d]\n", Result);
+	//Result = MyStrCmp("abc", "ab");
+	//printf("abc 와 ab 비교값 : [%d]\n", Result);
 
 }

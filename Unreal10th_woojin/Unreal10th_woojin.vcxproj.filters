@@ -37,6 +37,9 @@
     <Filter Include="헤더 파일\개인\공부">
       <UniqueIdentifier>{1762c6d0-ce6c-48a7-8e48-04ddef8d06a1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\메모장">
+      <UniqueIdentifier>{5cddd7ce-2001-4d31-b6aa-d08049093d3a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Day0521_Practice_1.cpp">
@@ -64,6 +67,9 @@
       <Filter>소스 파일\실습</Filter>
     </ClCompile>
     <ClCompile Include="Day0526.cpp">
+      <Filter>소스 파일\수업</Filter>
+    </ClCompile>
+    <ClCompile Include="Day0527.cpp">
       <Filter>소스 파일\수업</Filter>
     </ClCompile>
   </ItemGroup>
@@ -106,6 +112,12 @@
     </ClInclude>
     <ClInclude Include="Weekend_Practice0523.h">
       <Filter>헤더 파일\실습</Filter>
+    </ClInclude>
+    <ClInclude Include="Day0527.h">
+      <Filter>헤더 파일\5월</Filter>
+    </ClInclude>
+    <ClInclude Include="메모장.h">
+      <Filter>헤더 파일\메모장</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -9,7 +9,6 @@ const int MazeHeight = 10;
 const int MazeWidth = 20;
 const int InvalidPosition = -1; //플레이어 위치 값
 
-
 const char* ShapePlayer = "P";
 const char* ShapeWall = "#";
 const char* ShapePath = ".";
@@ -18,7 +17,7 @@ const char* ShapeEnd = "E";
 
 const float BattleRate = 0.1f;
 const int InitHealth = 100;
-
+int PlayerHealth = InitHealth;
 
 // 미로 배열 정의
 //int Maze[MazeHeight][MazeWidth] =
@@ -34,46 +33,47 @@ const int InitHealth = 100;
 //	{1,0,1,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,0,1},
 //	{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
 //};
-int Size = MazeHeight * MazeWidth;
-int* Maze = new int[Size]
-	{
-		1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, // Y = 0
-		1, 2, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, // Y = 1
-		1, 1, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, // Y = 2
-		1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, // Y = 3
-		1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, // Y = 4
-		1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, // Y = 5
-		1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, // Y = 6
-		1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3, 1, // Y = 7
-		1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, // Y = 8
-		1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1  // Y = 9
-	};
 
+int* Maze = nullptr;
 
 void Weekend0523_Dungeon()
-{	
-	int Player = InvalidPosition;
-	int PlayerHealth = InitHealth;
+{
+	Maze = new int[MazeHeight * MazeWidth]
+		{
+			1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+			1,2,0,0,0,1,0,0,0,0,1,0,0,1,0,0,0,1,0,1,
+			1,1,1,1,0,1,0,1,1,0,1,0,1,1,0,1,0,1,0,1,
+			1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,
+			1,0,1,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,0,1,
+			1,0,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,1,
+			1,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,
+			1,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,3,1,
+			1,0,1,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,0,1,
+			1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+		};
 
-	FindStart(Player); //시작 위치 찾기
+	int PlayerX = InvalidPosition;
+	int PlayerY = InvalidPosition;
 
-	if (Player != InvalidPosition)
+	FindStart(PlayerX, PlayerY); //시작 위치 찾기
+
+	if (PlayerX != InvalidPosition && PlayerY != InvalidPosition)
 	{
 		//시작 위치를 잘 찾은 정상적인 경우
 		printf("\n\n=== 텍스트 미로 탈출 게임 ===\n\n");
 
 		while (true)
 		{
-		printf("진행을 위해 아무키나 눌러주세요 : ");
+		printf("진행을 위해 아무키나 눌러주세요");
 		int Temp = getchar();
 
 		system("cls"); // 화면 깨끗이 지우기
 
 		//화면 출력
-		PrintMaze(Player);
+		PrintMaze(PlayerX, PlayerY);
 
 		//출구에 도달했는지 확인
-		if (IsGoal(Player))
+		if (IsGoal(PlayerX,PlayerY))
 		{
 			printf("미로를 탈출했습니다.\n\n");
 			break;
@@ -81,26 +81,20 @@ void Weekend0523_Dungeon()
 		
 		
 		//입력 처리
-		MoveDirection Direction = GetMoveInput(Player);
+		MoveDirection Direction = GetMoveInput(PlayerX, PlayerY);
 		switch (Direction)
 		{
 		case DirUp:
-			for (int i = 0; i < 20; i++)
-			{
-				Player--;
-			}
+			PlayerY--;
 			break;
 		case DirDown:
-			for (int i = 0; i < 20; i++)
-			{
-				Player++;
-			}
+			PlayerY++;
 			break;
 		case DirLeft:
-			Player--;
+			PlayerX--;
 			break;
 		case DirRight:
-			Player++;
+			PlayerX++;
 			break;
 		case DirNone:
 		default:
@@ -129,81 +123,85 @@ void Weekend0523_Dungeon()
 		//시작 위치를 찾이 못한 비정상적인 경우
 		printf("ERROR!! 맵의 시작 위치를 찾을 수 없습니다!\n");
 	}
-
-	delete[] Maze;
-	Maze = nullptr;
 }
 
-int FindStart(int& Player)
+void FindStart(int& OutX, int& OutY)
 {
-	for (int i = 0; i < Size; i++)
+	//이중 for를 통해서 미로 전체 순회
+	for (int y = 0; y < MazeHeight; y++)
 	{
-		if (Maze[i] == MazeStart)
+		for (int x = 0; x < MazeWidth; x++)
 		{
-			Player = Maze[i];
-			return Player;
+			if (GetMazeData(x,y) == MazeStart)	// 플레이어 시작점을 찾았으면
+			{
+				OutX = x;
+				OutY = y;
+				return;
+			}
 		}
 	}
-	Player = InvalidPosition; // 여기는 잘못된 곳이라고 의도를 명확히 써놓는 의미
+	OutX = InvalidPosition; // 여기는 잘못된 곳이라고 의도를 명확히 써놓는 의미
+	OutY = InvalidPosition;
 }
 
-void PrintMaze(int Player)
+void PrintMaze(int PlayerX, int PlayerY)
 {
-	for (int i = 0; i < Size; i++)
+	for (int y = 0; y < MazeHeight; y++)
 	{
-		if (Maze[i] == Player)
+		for (int x = 0; x < MazeWidth; x++)
 		{
-			printf(ShapePlayer);    //printf("P ");와 같음                
+			//현재 위치에 맞는 모양 찍엊주기
+			if (PlayerX == x && PlayerY == y)
+			{
+				printf(ShapePlayer);	//pritf("P"); 와 같음
+			}
+			else if (GetMazeData(x,y) == MazeWall)
+			{
+				printf(ShapeWall);
+			}
+			else if (GetMazeData(x, y) == MazePath)
+			{
+				printf(ShapePath);
+			}
+			else if (GetMazeData(x, y) == MazeStart)
+			{
+				printf(ShapeStart);
+			}
+			else if (GetMazeData(x, y) == MazeEnd)
+			{
+				printf(ShapeEnd);
+			}
 		}
-		else if (Maze[i] == MazeWall)
-		{
-			printf(ShapeWall);
-		}
-		else if (Maze[i] == MazePath)
-		{
-			printf(ShapePath);
-		}
-		else if (Maze[i] == MazeStart)
-		{
-			printf(ShapeStart);
-		}
-		else if (Maze[i] == MazeEnd)
-		{
-			printf(ShapeEnd);
-		}
-		if ((i % 20 == 0))
-		{
 		printf("\n"); //줄바꿈 추가
-		}
 	}
 }
 
-bool IsGoal(int Player)
+bool IsGoal(int PlayerX, int PlayerY)
 {
-	return Maze[Player] == MazeEnd;
+	return GetMazeData(PlayerX, PlayerY) == MazeEnd;
 }
 
-int PrintAvailableMoves(int Player)
+int PrintAvailableMoves(int PlayerX, int PlayerY)
 {
 	int Flags = DirNone; // ????(Flags) || 0000  = 0
 
 	//w(↑) s(↓) a(←) d(→)
-	if (!IsWall(Player))
+	if (!IsWall(PlayerX, PlayerY - 1))
 	{
 		printf("w(↑) ");
 		Flags |= DirUp; 
 	}
-	if (!IsWall(Player))
+	if (!IsWall(PlayerX, PlayerY + 1))
 	{
 		printf("s(↓) ");
 		Flags |= DirDown;
 	}
-	if (!IsWall(Player))
+	if (!IsWall(PlayerX - 1, PlayerY))
 	{
 		printf("a(←) ");
 		Flags |= DirLeft;
 	}
-	if (!IsWall(Player))
+	if (!IsWall(PlayerX + 1, PlayerY ))
 	{
 		printf("d(→) ");
 		Flags |= DirRight;
@@ -212,15 +210,15 @@ int PrintAvailableMoves(int Player)
 	return Flags;
 }
 
-bool IsWall(int X)
+bool IsWall(int X, int Y)
 {
-	return (X + 1 || X -1 || X + 20 || X-20 == MazeWall);
+	return (X < 0 || X >= MazeWidth || Y < 0 || Y >= MazeHeight || GetMazeData(X, Y) == MazeWall);
 }
 
-MoveDirection GetMoveInput(int Player)
+MoveDirection GetMoveInput(int PlayerX, int PlayerY)
 {
-	printf("\n이동할 방향을 선택하세요 (w:위, s:아래, a:왼쪽, d:오른쪽) :\n");
-	int AvailableFalgs = PrintAvailableMoves(Player);
+	printf("이동할 방향을 선택하세요 (w:위, s:아래, a:왼쪽, d:오른쪽) :\n");
+	int AvailableFalgs = PrintAvailableMoves(PlayerX, PlayerY);
 
 	MoveDirection Result = DirNone;
 	char Input = 0;
@@ -314,4 +312,7 @@ int GetSum(int Number)
 	return Sum;
 }
 
-
+MazeTile GetMazeData(int X, int Y)
+{
+	return (MazeTile)Maze[X + MazeWidth * Y];
+}
