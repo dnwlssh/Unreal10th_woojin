@@ -25,14 +25,14 @@ void Weekend0523_Dungeon();
 /// </summary>
 /// <param name="OutX">시작 X 위치(출력용)</param>
 /// <param name="OutY">시작 Y 위치(출력용)</param>
-void FindStart(int& OutX, int& OutY);
+int FindStart(int& Player);
 
 /// <summary>
 /// 미로를 출력하는 함수 
 /// </summary>
 /// <param name="PlayerX">플레이어의 현재 위치(X)</param>
 /// <param name="PlayerY">플레이어의 현재 위치(Y)</param>
-void PrintMaze(int PlayerX, int PlayerY);
+void PrintMaze(int Player);
 
 /// <summary>
 /// 플레이어가 도착점에 도착했는지 확인하는 함수
@@ -41,7 +41,7 @@ void PrintMaze(int PlayerX, int PlayerY);
 /// <param name="PlayerY">플레이어의 현재 위치(Y)</param>
 /// <returns> true 면 도착점에 있고 false면 도착점에 없다</returns>
 //bool IsGoal(int PlayerX, int PlayerY) { return Maze[PlayerY][PlayerY] == MazeEnd; } 인라인 함수 참고
-bool IsGoal(int PlayerX, int PlayerY);
+bool IsGoal(int Player);
 
 /// <summary>
 /// 이동 할 수 있는 방향을 출력하고 그 결과를 비트 플래그로 반환하는 함수
@@ -49,7 +49,7 @@ bool IsGoal(int PlayerX, int PlayerY);
 /// <param name="PlayerX">플레이어의 현재 위치(X)</param>
 /// <param name="PlayerY">플레이어의 현재 위치(Y)</param>
 /// <returns>이동 가능한 방향이 저장된 비트 플래그</returns>
-int PrintAvailableMoves(int PlayerX, int PlayerY);
+int PrintAvailableMoves(int Player);
 
 /// <summary>
 /// 해당 위치가 벽인지 아닌지 확인하는 함수
@@ -57,7 +57,7 @@ int PrintAvailableMoves(int PlayerX, int PlayerY);
 /// <param name="X">확인할 X 위치</param>
 /// <param name="Y">확인할 Y 위치</param>
 /// <returns> true면 벽 , false면 벽이 아닌 이동 가능한 지역</returns>
-bool IsWall(int X, int Y);
+bool IsWall(int X);
 
 /// <summary>
 /// 이동 방향을 입력 받고 해당 방향을 리턴하는 함수
@@ -65,7 +65,7 @@ bool IsWall(int X, int Y);
 /// <param name="PlayerX">플레이어의 현재 위치(X)</param>
 /// <param name="PlayerY">플레이어의 현재 위치(Y)</param>
 /// <returns>입력 받은 방향</returns>
-MoveDirection GetMoveInput(int PlayerX, int PlayerY);
+MoveDirection GetMoveInput(int Player);
 
 /// <summary>
 /// 0.0f ~ 1.0f 사이를 리턴하는 함수
