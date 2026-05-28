@@ -157,18 +157,25 @@ void CallOutMapData()
 		MazeWidth = ParsedMazeWidth; //20
 
 		// 맵 저장 하기
+		int MainIndex = 0;
 		Maze = new int[MazeWidth * MazeHeight]; // 저장한 가로 세로 바탕으로 1차원 배열 형태 생성
 		//이제 각 배열의 값마다 남은 문자열들을 넣어줘야 한다.
-		for (int i = 0; i < MazeWidth * MazeHeight; i++)
+		for (int i = 0; i < FileTexts.length(); i++)
 		{
+			if (MainIndex >= MazeWidth * MazeHeight)
+			{
+				break;
+			}
 //			const char* CheckMazeIndex = FileTexts.substr(FindFirstEnter + 1 + i, 1).c_str();
 			if ((*(FileTexts.substr(FindFirstEnter + 1 + i, 1).c_str()) == ',') || (*(FileTexts.substr(FindFirstEnter + 1 + i, 1).c_str()) == '\n'))
 			{
+				continue;
 			}
 			else
 			{
 				// 첫 엔터 이후 첫 인덱스의 값 하나를 잘라서 인티저로 만든 값 대입
-				Maze[i] = stoi(FileTexts.substr(FindFirstEnter + 1 + i, 1).c_str());
+				Maze[MainIndex] = stoi(FileTexts.substr(FindFirstEnter + 1 + i, 1).c_str());
+				MainIndex++;
 			}
 		}
 		InputFile.close();	//작업을 마치면 파일을 무조건 닫아줘야 한다.
