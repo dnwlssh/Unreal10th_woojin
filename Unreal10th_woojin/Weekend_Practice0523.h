@@ -1,5 +1,11 @@
 #pragma once
 
+struct Map //맵은
+{
+	const int MazeHeight;
+	const int MazeWidth;
+};
+
 enum MazeTile
 {
 	MazePath = 0,
@@ -16,6 +22,9 @@ enum MoveDirection
 	DirLeft = 1 << 2,
 	DirRight = 1 << 3,
 };
+
+//맵 파일을 불러오고 파싱하는 함수
+void CallOutMapData();
 
 //게임 시작 함수
 void Weekend0523_Dungeon();

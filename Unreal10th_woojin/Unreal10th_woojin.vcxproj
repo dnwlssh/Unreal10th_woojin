@@ -130,6 +130,7 @@
     <ClCompile Include="Day0522.cpp" />
     <ClCompile Include="Day0526.cpp" />
     <ClCompile Include="Day0527.cpp" />
+    <ClCompile Include="Day0528.cpp" />
     <ClCompile Include="Unreal10th_woojin_Main.cpp" />
     <ClCompile Include="Day0521_Practice_3.cpp" />
     <ClCompile Include="Weekend_Practice0523.cpp" />
@@ -148,6 +149,7 @@
     <ClInclude Include="Day0522.h" />
     <ClInclude Include="Day0526.h" />
     <ClInclude Include="Day0527.h" />
+    <ClInclude Include="Day0528.h" />
     <ClInclude Include="Weekend_Practice0523.h" />
     <ClInclude Include="메모장.h" />
   </ItemGroup>

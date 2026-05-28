@@ -4,7 +4,8 @@
 #include <iostream>
 #include <stdio.h>
 #include <time.h>
-#include "Day0527.h"
+#include "Day0528.h"
+#include "Weekend_Practice0523.h"
 
 using namespace std;
 
@@ -16,7 +17,7 @@ int main()
 
 
 	
-	Day0527();
+	//Day0528();
 
 	//const char* TestStirng = "Hello";
 	//char Buffer[32] = { 0, };
@@ -35,5 +36,5 @@ int main()
 	//printf("abc 와 abb 비교값 : [%d]\n", Result);
 	//Result = MyStrCmp("abc", "ab");
 	//printf("abc 와 ab 비교값 : [%d]\n", Result);
-
+	Weekend0523_Dungeon();
 }

@@ -1,12 +1,14 @@
 #include <iostream>
 #include <stdio.h>
+#include <fstream>
+#include <string>
 #include <time.h>
 #include "Weekend_Practice0523.h"
 
 using namespace std;
 
-const int MazeHeight = 10;
-const int MazeWidth = 20;
+int MazeHeight ; //10
+int MazeWidth;  //20
 const int InvalidPosition = -1; //플레이어 위치 값
 
 const char* ShapePlayer = "P";
@@ -36,25 +38,30 @@ int PlayerHealth = InitHealth;
 
 int* Maze = nullptr;
 
+
 void Weekend0523_Dungeon()
 {
-	Maze = new int[MazeHeight * MazeWidth]
-		{
-			1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
-			1,2,0,0,0,1,0,0,0,0,1,0,0,1,0,0,0,1,0,1,
-			1,1,1,1,0,1,0,1,1,0,1,0,1,1,0,1,0,1,0,1,
-			1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,
-			1,0,1,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,0,1,
-			1,0,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,1,
-			1,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,
-			1,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,3,1,
-			1,0,1,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,0,1,
-			1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
-		};
+	//Maze = new int[MazeHeight * MazeWidth]
+	//	{
+	//		1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
+	//		1,2,0,0,0,1,0,0,0,0,1,0,0,1,0,0,0,1,0,1,
+	//		1,1,1,1,0,1,0,1,1,0,1,0,1,1,0,1,0,1,0,1,
+	//		1,0,0,1,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,1,
+	//		1,0,1,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,0,1,
+	//		1,0,0,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,1,
+	//		1,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,
+	//		1,0,0,1,0,0,0,1,0,0,0,1,0,0,0,1,0,0,3,1,
+	//		1,0,1,1,1,1,0,1,1,1,0,1,1,1,0,1,1,1,0,1,
+	//		1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1
+	//	};
+
+	// 맵 데이터 파일에서 불러오기
+
 
 	int PlayerX = InvalidPosition;
 	int PlayerY = InvalidPosition;
 
+	CallOutMapData();
 	FindStart(PlayerX, PlayerY); //시작 위치 찾기
 
 	if (PlayerX != InvalidPosition && PlayerY != InvalidPosition)
@@ -64,7 +71,7 @@ void Weekend0523_Dungeon()
 
 		while (true)
 		{
-		printf("진행을 위해 아무키나 눌러주세요");
+		printf("진행을 위해 아무키나 눌러주세요 : ");
 		int Temp = getchar();
 
 		system("cls"); // 화면 깨끗이 지우기
@@ -122,6 +129,54 @@ void Weekend0523_Dungeon()
 	{
 		//시작 위치를 찾이 못한 비정상적인 경우
 		printf("ERROR!! 맵의 시작 위치를 찾을 수 없습니다!\n");
+	}
+	delete[] Maze;
+	Maze = nullptr;
+}
+
+void CallOutMapData()
+{
+	const string MapOfMaze = ".\\Data\\MapData.txt";
+	ifstream InputFile(MapOfMaze);
+	if (InputFile.is_open())			// 파일이 열렸을 떄
+	{
+		std::string FileTexts(								//파일에 있는 데이터 가져오기
+			(std::istreambuf_iterator<char>(InputFile)),
+			std::istreambuf_iterator<char>()
+		);
+
+		// 저장된 맵데이터 찾고 파싱
+		// 20 , 10 각 변수에 저장하기
+		int FindFirstComma = FileTexts.find(',');  //FindFirstComma는  첫번째 콤마 가 나온 인덱스가 저장되어 있다. Size는 2
+		int FindFirstEnter = FileTexts.find('\n');
+		
+		int ParsedMazeWidth = stoi(FileTexts.substr(0, FindFirstComma)); // 20 저장
+		int ParsedpMazeHeight = stoi(FileTexts.substr(FindFirstComma + 1, FindFirstEnter - FindFirstComma)); //10 /인덱스 3부터 5 - 3만큼(2)
+
+		MazeHeight = ParsedpMazeHeight; //10
+		MazeWidth = ParsedMazeWidth; //20
+
+		// 맵 저장 하기
+		Maze = new int[MazeWidth * MazeHeight]; // 저장한 가로 세로 바탕으로 1차원 배열 형태 생성
+		//이제 각 배열의 값마다 남은 문자열들을 넣어줘야 한다.
+		for (int i = 0; i < MazeWidth * MazeHeight; i++)
+		{
+//			const char* CheckMazeIndex = FileTexts.substr(FindFirstEnter + 1 + i, 1).c_str();
+			if ((*(FileTexts.substr(FindFirstEnter + 1 + i, 1).c_str()) == ',') || (*(FileTexts.substr(FindFirstEnter + 1 + i, 1).c_str()) == '\n'))
+			{
+			}
+			else
+			{
+				// 첫 엔터 이후 첫 인덱스의 값 하나를 잘라서 인티저로 만든 값 대입
+				Maze[i] = stoi(FileTexts.substr(FindFirstEnter + 1 + i, 1).c_str());
+			}
+		}
+		InputFile.close();	//작업을 마치면 파일을 무조건 닫아줘야 한다.
+	}
+	else
+	{
+		// 파일이 없거나 다른 이유로 열리지 않았다.
+		printf("파일을 열 수 없습니다.\n");
 	}
 }
 
