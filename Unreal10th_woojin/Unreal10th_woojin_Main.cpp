@@ -8,12 +8,13 @@
 #include "Weekend_Practice0523.h"
 #include "Day0529.h"
 #include "Day0529_Pratice.h"
+#include "Weekend_Practice0529_1.h"
+
 
 using namespace std;
 
 int main()
 {
-	int i;
 	unsigned int Seed = (unsigned int)time(0);
 	Seed = 0;		// 테스트용으로 임시로 설정
 	srand(Seed);	// 시드값 초기화
@@ -40,5 +41,6 @@ int main()
 	//Result = MyStrCmp("abc", "ab");
 	//printf("abc 와 ab 비교값 : [%d]\n", Result);
 	//Weekend0523_Dungeon();
-	Day0529_Pratice();
+	//Day0529_Pratice();
+	Homework01_Run();
 }
