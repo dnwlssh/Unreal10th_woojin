@@ -40,13 +40,22 @@
     <Filter Include="헤더 파일\메모장">
       <UniqueIdentifier>{5cddd7ce-2001-4d31-b6aa-d08049093d3a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Maze">
+      <UniqueIdentifier>{fdc573b5-e205-4540-a2eb-265d100db557}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\과제">
+      <UniqueIdentifier>{455b109f-3e13-4dca-9c73-5cfa5deb1654}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\과제">
+      <UniqueIdentifier>{52373173-c590-473e-a150-3e8baa717fe3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\메인">
+      <UniqueIdentifier>{4666b952-a281-415a-b45d-08497946c919}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Day0521_Practice_1.cpp">
       <Filter>소스 파일\실습</Filter>
-    </ClCompile>
-    <ClCompile Include="Unreal10th_woojin_Main.cpp">
-      <Filter>소스 파일\수업</Filter>
     </ClCompile>
     <ClCompile Include="Day0521_2.cpp">
       <Filter>소스 파일\수업</Filter>
@@ -63,9 +72,6 @@
     <ClCompile Include="Day0522.cpp">
       <Filter>소스 파일\수업</Filter>
     </ClCompile>
-    <ClCompile Include="Weekend_Practice0523.cpp">
-      <Filter>소스 파일\실습</Filter>
-    </ClCompile>
     <ClCompile Include="Day0526.cpp">
       <Filter>소스 파일\수업</Filter>
     </ClCompile>
@@ -74,6 +80,27 @@
     </ClCompile>
     <ClCompile Include="Day0528.cpp">
       <Filter>소스 파일\수업</Filter>
+    </ClCompile>
+    <ClCompile Include="Day0529.cpp">
+      <Filter>소스 파일\수업</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Maze</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Maze</Filter>
+    </ClCompile>
+    <ClCompile Include="Day0529_Pratice.cpp">
+      <Filter>소스 파일\실습</Filter>
+    </ClCompile>
+    <ClCompile Include="Weekend_Practice0523.cpp">
+      <Filter>소스 파일\과제</Filter>
+    </ClCompile>
+    <ClCompile Include="Weekend_Practice0529_1.cpp">
+      <Filter>소스 파일\과제</Filter>
+    </ClCompile>
+    <ClCompile Include="Unreal10th_woojin_Main.cpp">
+      <Filter>소스 파일\메인</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -113,9 +140,6 @@
     <ClInclude Include="Day0526.h">
       <Filter>헤더 파일\5월</Filter>
     </ClInclude>
-    <ClInclude Include="Weekend_Practice0523.h">
-      <Filter>헤더 파일\실습</Filter>
-    </ClInclude>
     <ClInclude Include="Day0527.h">
       <Filter>헤더 파일\5월</Filter>
     </ClInclude>
@@ -124,6 +148,30 @@
     </ClInclude>
     <ClInclude Include="Day0528.h">
       <Filter>헤더 파일\5월</Filter>
+    </ClInclude>
+    <ClInclude Include="Day0529.h">
+      <Filter>헤더 파일\5월</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Maze</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Maze</Filter>
+    </ClInclude>
+    <ClInclude Include="MazeCommon.h">
+      <Filter>Maze</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>헤더 파일\5월</Filter>
+    </ClInclude>
+    <ClInclude Include="Day0529_Pratice.h">
+      <Filter>헤더 파일\실습</Filter>
+    </ClInclude>
+    <ClInclude Include="Weekend_Practice0529_1.h">
+      <Filter>헤더 파일\과제</Filter>
+    </ClInclude>
+    <ClInclude Include="Weekend_Practice0523.h">
+      <Filter>헤더 파일\과제</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

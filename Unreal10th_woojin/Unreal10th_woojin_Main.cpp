@@ -6,18 +6,21 @@
 #include <time.h>
 #include "Day0528.h"
 #include "Weekend_Practice0523.h"
+#include "Day0529.h"
+#include "Day0529_Pratice.h"
 
 using namespace std;
 
 int main()
 {
+	int i;
 	unsigned int Seed = (unsigned int)time(0);
 	Seed = 0;		// 테스트용으로 임시로 설정
 	srand(Seed);	// 시드값 초기화
 
 
 	
-	//Day0528();
+	//Day0529();
 
 	//const char* TestStirng = "Hello";
 	//char Buffer[32] = { 0, };
@@ -36,5 +39,6 @@ int main()
 	//printf("abc 와 abb 비교값 : [%d]\n", Result);
 	//Result = MyStrCmp("abc", "ab");
 	//printf("abc 와 ab 비교값 : [%d]\n", Result);
-	Weekend0523_Dungeon();
+	//Weekend0523_Dungeon();
+	Day0529_Pratice();
 }

@@ -7,15 +7,16 @@
 
 using namespace std;
 
-int MazeHeight ; //10
+int MazeHeight; //10
 int MazeWidth;  //20
 const int InvalidPosition = -1; //플레이어 위치 값
 
-const char* ShapePlayer = "P";
-const char* ShapeWall = "#";
-const char* ShapePath = ".";
-const char* ShapeStart = "S";
-const char* ShapeEnd = "E";
+const char* ShapePlayer = " P ";
+const char* ShapeWall = " # ";
+const char* ShapePath = " . ";
+const char* ShapeStart = " S "
+;
+const char* ShapeEnd = " E ";
 
 const float BattleRate = 0.1f;
 const int InitHealth = 100;
@@ -158,7 +159,7 @@ void CallOutMapData()
 
 		// 맵 저장 하기
 		int MainIndex = 0;
-		Maze = new int[MazeWidth * MazeHeight]; // 저장한 가로 세로 바탕으로 1차원 배열 형태 생성
+		Maze = new int[MazeWidth * MazeHeight]; // 동적 할당으로 1저장한 가로 세로 바탕으로 1차원 배열 형태 생성
 		//이제 각 배열의 값마다 남은 문자열들을 넣어줘야 한다.
 		for (int i = 0; i < FileTexts.length(); i++)
 		{
@@ -166,7 +167,7 @@ void CallOutMapData()
 			{
 				break;
 			}
-//			const char* CheckMazeIndex = FileTexts.substr(FindFirstEnter + 1 + i, 1).c_str();
+
 			if ((*(FileTexts.substr(FindFirstEnter + 1 + i, 1).c_str()) == ',') || (*(FileTexts.substr(FindFirstEnter + 1 + i, 1).c_str()) == '\n'))
 			{
 				continue;
