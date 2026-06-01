@@ -5,6 +5,12 @@
 
 using namespace std;
 
+// 강사 솔루션
+// 요일은 7개가 반복된다. ( % 7 사용 )
+// 1년 1월 1일에서 몇일이 지났는지 확인해야 한다.
+// 윤년에 대한 처리가 필요하다.
+
+
 void Homework01_Run()
 {
 	int Year = 0, Month = 0, Date = 0;

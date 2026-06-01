@@ -111,3 +111,5 @@ int GetSum(int Number);
 int GetSum(char* NumberString);
 
 MazeTile GetMazeData(int X, int Y);
+
+
