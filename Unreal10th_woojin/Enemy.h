@@ -17,7 +17,6 @@ struct MazeEnemy
 		AttackPowerMax = GetRandomRange(8, 12);
 		Reward = GetRandomRange(80, 120);
 	}
-
 	MazeEnemy(const std::string& InName, int InLevel)
 		: Name(InName)
 	{
@@ -43,37 +42,46 @@ struct MazeEnemy
 		return Result;
 	}
 
-	MazeEnemy operator-(const MazeEnemy& InOther) const	// 이 const는 맴버를 수정하지 않는다.(읽기 전용이다.)
+	MazeEnemy operator-(const MazeEnemy& InOther) const
 	{
-		//	Health = 20; // const 때문에 안된다.
-
 		MazeEnemy Result;
-		Result.Name = "약화된" + this->Name;	// this : 자기 자신의 주소
+		Result.Name = "약화된 " + this->Name;
 		Result.AttackPowerMin = (AttackPowerMin - InOther.AttackPowerMin) / 2;
+		if (Result.AttackPowerMin < 1)
+		{
+			Result.AttackPowerMin = 1;
+		}
 		Result.AttackPowerMax = AttackPowerMax - InOther.AttackPowerMax;
+		if (Result.AttackPowerMax < 1)
+		{
+			Result.AttackPowerMax = 1;
+		}
+		if (Result.AttackPowerMax < Result.AttackPowerMin)
+		{
+			Result.AttackPowerMax = Result.AttackPowerMin;
+		}
 		Result.Reward = Reward + InOther.Reward;
 
 		return Result;
 	}
 
 	MazeEnemy operator*(float InOther) const
-		{
+	{
 		MazeEnemy Result;
-		Result.Name =this->Name;	// this : 자기 자신의 주소
-		Result.Health *= static_cast<int>(Health * InOther);
-		Result.AttackPowerMin *= static_cast<int> (AttackPowerMin * InOther);
-		Result.AttackPowerMax *= static_cast<int>(AttackPowerMax * InOther);
-		Result.Reward *= static_cast<int>(Reward * InOther);
+		Result.Name = this->Name;
+		Result.Health = static_cast<int>(Health * InOther);
+		Result.AttackPowerMin = static_cast<int>(AttackPowerMin * InOther);
+		Result.AttackPowerMax = static_cast<int>(AttackPowerMax * InOther);
+		Result.Reward = static_cast<int>(Reward * InOther);
 		return Result;
-		}
+	}
 
 	MazeEnemy& operator*=(float InOther)
 	{
-		Name =this->Name;	// this : 자기 자신의 주소
-		Health *= static_cast<int>(Health * InOther);
-		AttackPowerMin *= static_cast<int> (AttackPowerMin * InOther);
-		AttackPowerMax *= static_cast<int>(AttackPowerMax * InOther);
-		Reward *= static_cast<int>(Reward * InOther);
+		Health = static_cast<int>(Health * InOther);
+		AttackPowerMin = static_cast<int>(AttackPowerMin * InOther);
+		AttackPowerMax = static_cast<int>(AttackPowerMax * InOther);
+		Reward = static_cast<int>(Reward * InOther);
 		return *this;
 	}
 };

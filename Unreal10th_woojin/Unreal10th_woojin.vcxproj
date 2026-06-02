@@ -137,9 +137,12 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Unreal10th_woojin_Main.cpp" />
     <ClCompile Include="Day0521_Practice_3.cpp" />
+    <ClCompile Include="Utils.cpp" />
     <ClCompile Include="Weekend_Practice0523.cpp" />
+    <ClCompile Include="Weekend_Practice0523_Solution.cpp" />
     <ClCompile Include="Weekend_Practice0529_1.cpp" />
     <ClCompile Include="Weekend_Practice0529_2.cpp" />
+    <ClCompile Include="Day0602.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="0521_.h" />
@@ -158,6 +161,7 @@
     <ClInclude Include="Day0528.h" />
     <ClInclude Include="Day0529.h" />
     <ClInclude Include="Day0529_Pratice.h" />
+    <ClInclude Include="Day0602.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="MazeCommon.h" />
     <ClInclude Include="Player.h" />

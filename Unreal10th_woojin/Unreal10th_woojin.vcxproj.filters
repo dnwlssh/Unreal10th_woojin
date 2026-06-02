@@ -52,6 +52,9 @@
     <Filter Include="소스 파일\메인">
       <UniqueIdentifier>{4666b952-a281-415a-b45d-08497946c919}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\6월">
+      <UniqueIdentifier>{a578d423-171d-4fdb-b31f-665f802fdeb9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Day0521_Practice_1.cpp">
@@ -103,6 +106,15 @@
       <Filter>소스 파일\메인</Filter>
     </ClCompile>
     <ClCompile Include="Weekend_Practice0529_2.cpp">
+      <Filter>소스 파일\과제</Filter>
+    </ClCompile>
+    <ClCompile Include="Day0602.cpp">
+      <Filter>소스 파일\수업</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>소스 파일\수업</Filter>
+    </ClCompile>
+    <ClCompile Include="Weekend_Practice0523_Solution.cpp">
       <Filter>소스 파일\과제</Filter>
     </ClCompile>
   </ItemGroup>
@@ -178,6 +190,9 @@
     </ClInclude>
     <ClInclude Include="Weekend_Practice0529_2.h">
       <Filter>헤더 파일\과제</Filter>
+    </ClInclude>
+    <ClInclude Include="Day0602.h">
+      <Filter>헤더 파일\6월</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

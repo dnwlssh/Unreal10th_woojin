@@ -1,7 +1,8 @@
 #pragma once
-const int InvalidPosition = -1; //플레이어 위치 값
-const int InitHealth = 100;
 
+const int InvalidPosition = -1;
+const int InitHealth = 100;
+const int InitMoney = 0;
 
 struct Position
 {
@@ -10,7 +11,7 @@ struct Position
 
 	Position() = default;
 	Position(int InX, int InY)
-		:X(InX), Y(InY)
+		: X(InX), Y(InY)
 	{
 	}
 
@@ -18,7 +19,6 @@ struct Position
 	{
 		return Position(X + InOther.X, Y + InOther.Y);
 	}
-
 	Position operator-(const Position& InOther) const
 	{
 		return Position(X - InOther.X, Y - InOther.Y);

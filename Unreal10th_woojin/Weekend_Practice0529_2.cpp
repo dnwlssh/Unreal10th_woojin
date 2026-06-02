@@ -8,6 +8,7 @@ using namespace std;
 void Homework02_Run()
 {
 	unsigned int Seed = (unsigned int)time(0);	// 테스트용으로 임시로 설정
+
 	srand(Seed);	// 시드값 초기화
 
 
@@ -66,8 +67,9 @@ void Homework02_Run()
 	while (PlayerScore < 21)
 	{
 		char Choice;
-		printf("카드를 더 받으시겠습니까? ( Hit / Stand ) : \n");
+		printf("카드를 더 받으시겠습니까? ( Hit / Stand )\n");
 		printf("히트를 원하면 [ H ] 또는 [ h ] 입력하세요.\n");
+		printf("스탠드를 원하면 아무키나 입력하세요. : \n");
 		cin >> Choice;
 
 		if (Choice == 'H' || Choice == 'h')
@@ -126,12 +128,12 @@ void Homework02_Run()
 
 void Deck(Card deck[])
 {
-	std::string Suits[4] = { "♤ ", "◇", "♡", "♧" };
+	std::string Suits[4] = { "♤", "◇", "♡", "♧" };
 	int Index = 0;
 
 	for (int i = 0; i < 4; i++)
 	{
-		for (int j = Ace; j < King; j++)
+		for (int j = Ace; j <= King; j++)
 		{
 			deck[Index] = Card(static_cast<RankNumber>(j), Suits[i]);
 			Index++;

@@ -9,6 +9,7 @@
 #include "Day0529.h"
 #include "Day0529_Pratice.h"
 #include "Weekend_Practice0529_2.h"
+#include "Day0602.h"
 
 using namespace std;
 
@@ -39,7 +40,8 @@ int main()
 	//printf("abc 와 abb 비교값 : [%d]\n", Result);
 	//Result = MyStrCmp("abc", "ab");
 	//printf("abc 와 ab 비교값 : [%d]\n", Result);
-	//Weekend0523_Dungeon();
+	Weekend0523_Dungeon();
 	//Day0529_Pratice();
-	Homework02_Run();
+	//Homework02_Run();
+	//Day0602();
 }
