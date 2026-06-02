@@ -1,6 +1,7 @@
 #pragma once
 #include "MazeCommon.h"
 #include "Player.h"
+#include "Monster.h"
 
 enum MazeTile
 {
@@ -57,12 +58,6 @@ struct MazeData
 		:Data(InData), Width(InWidth), Height(InHeight)
 	{
 	}
-};
-
-class Actor
-{
-protected:
-
 };
 
 const char* const MapFilePath = ".\\Data\\MapData.txt";
@@ -191,3 +186,5 @@ void CleanupMazeData(MazeData* InMazeData);
 /// <param name="InMazeData">확인할 데이터</param>
 /// <returns>true면 사용가능, false면 사용 불가능</returns>
 bool IsValidMazeData(MazeData* InMazeData);
+
+Monster RandomChoiceEnemy();

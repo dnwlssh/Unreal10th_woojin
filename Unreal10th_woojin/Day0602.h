@@ -92,7 +92,7 @@ protected:
 
 protected:
 	std::string Name = "동물";	// 동물의 이름
-	int Age = 10;				// 동물의 나이
+	int Age = 0;				// 동물의 나이
 	int Energy = MaxEnergy;		// 동물의 에너지
 
 	
@@ -137,19 +137,21 @@ class Eagle : public Animal
 {
 public:
 	Eagle()
-		:Animal()
-	{ }
+		:Animal(), aAA(8)
+	{
+		aAA = 8;
+	}
 	Eagle(const std::string& InName)
 		:Animal(InName)
 	{ }
 
 	virtual ~Eagle() = default;
 
-
 	void Fly();
 	virtual void Chrip() override; // 가상함수 덮어 쓰기
 private:
 	const int FlyEnergeCost = 10;
+	int aAA = 9;
 };
 
 // 늑대

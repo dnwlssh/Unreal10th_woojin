@@ -6,6 +6,8 @@
 #include "Weekend_Practice0523.h"
 #include "Player.h"
 #include "Enemy.h"
+#include "Actor.h"
+#include "Monster.h"
 
 // 미로 배열
 //int Maze[MazeHeight][MazeWidth] =
@@ -330,25 +332,32 @@ bool Battle(Player& InPlayer)
 {
     const float CriticalRate = 0.1f;
 
-    MazeEnemy Goblin;
-    printf("[%s]이 나타났다!! 전투 시작!\n", Goblin.Name.c_str());
+    Monster RandomMonster= RandomChoiceEnemy();
+    printf("[%s]이 나타났다!! 전투 시작!\n", RandomMonster.Name.c_str());
+
     int Turn = 1;
-    while (InPlayer.Health > 0 && Goblin.Health > 0)
+    while (InPlayer.Health > 0 && RandomMonster.Health > 0)
     {
         // 전투 턴 진행
         printf("------------턴 %d------------\n", Turn);
-        printf("| Player : %3d  Enemy : %3d |\n", InPlayer.Health, Goblin.Health);
+        printf("| Player : %3d  Enemy : %3d |\n", InPlayer.Health, RandomMonster.Health);
         printf("-----------------------------\n");
-        int Damage = GetRandomRange(InPlayer.AttackPowerMin, InPlayer.AttackPowerMax);
+        int Damage = InPlayer.ApplyDamage(InPlayer);
         printf("당신의 공격 : %d의 데미지를 주었다.\n", Damage);
-        Goblin.Health -= Damage;
-        if (Goblin.Health > 0)
+        RandomMonster.TakeDamage(Damage);
+        if (RandomMonster.Health > 0)
         {
-            Damage = GetRandomRange(Goblin.AttackPowerMin, Goblin.AttackPowerMax);
+            Damage = GetRandomRange(RandomMonster.AttackPowerMin, RandomMonster.AttackPowerMax);
             printf("적의 공격 : %d의 데미지를 받았다.\n", Damage);
-            InPlayer.Health -= Damage;
+            InPlayer.TakeDamage(Damage);
+            /*printf("적의 공격 : %d의 데미지를 받았다.\n", Damage);
+            InPlayer.Health -= Damage;*/
         }
+        Turn++;
     }
+
+   /* delete RandomEnemy[RandomEnemyIndex];
+    RandomEnemy[RandomEnemyIndex] = nullptr;*/
 
     return InPlayer.Health > 0;    // 플레이어의 체력이 남은채 while이 끝났으면 플레이어가 이긴것
 }
@@ -546,3 +555,28 @@ bool IsValidMazeData(MazeData* InMazeData)
 
     return (InMazeData != nullptr) && (InMazeData->Data != nullptr);
 }
+
+Monster RandomChoiceEnemy()
+{
+    Goblin Goblin("고블린");
+    Wraith Wraith("레이스");
+    Gorlem Gorlem("골렘");
+    Monster RandomMonster;
+    int Temp = rand() % 3;
+    switch (Temp)
+    {
+    case 0:
+        RandomMonster = Goblin;
+        break;
+    case 1:
+        RandomMonster = Wraith;
+        break;
+    case 2:
+        RandomMonster = Gorlem;
+    default:
+        break;
+    }
+    return RandomMonster;
+}
+
+

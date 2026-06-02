@@ -55,6 +55,12 @@
     <Filter Include="헤더 파일\6월">
       <UniqueIdentifier>{a578d423-171d-4fdb-b31f-665f802fdeb9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Maze\Maze_Header">
+      <UniqueIdentifier>{fc5473ba-3798-4d75-901e-53096ede8e52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Maze\Maze_cpp">
+      <UniqueIdentifier>{45149ec5-7f34-4d96-8b78-46b03d045f44}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Day0521_Practice_1.cpp">
@@ -87,12 +93,6 @@
     <ClCompile Include="Day0529.cpp">
       <Filter>소스 파일\수업</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Maze</Filter>
-    </ClCompile>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>Maze</Filter>
-    </ClCompile>
     <ClCompile Include="Day0529_Pratice.cpp">
       <Filter>소스 파일\실습</Filter>
     </ClCompile>
@@ -116,6 +116,15 @@
     </ClCompile>
     <ClCompile Include="Weekend_Practice0523_Solution.cpp">
       <Filter>소스 파일\과제</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Maze\Maze_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Maze\Maze_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor.cpp">
+      <Filter>Maze\Maze_cpp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -167,15 +176,6 @@
     <ClInclude Include="Day0529.h">
       <Filter>헤더 파일\5월</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Maze</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy.h">
-      <Filter>Maze</Filter>
-    </ClInclude>
-    <ClInclude Include="MazeCommon.h">
-      <Filter>Maze</Filter>
-    </ClInclude>
     <ClInclude Include="Utils.h">
       <Filter>헤더 파일\5월</Filter>
     </ClInclude>
@@ -193,6 +193,21 @@
     </ClInclude>
     <ClInclude Include="Day0602.h">
       <Filter>헤더 파일\6월</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Maze\Maze_Header</Filter>
+    </ClInclude>
+    <ClInclude Include="MazeCommon.h">
+      <Filter>Maze\Maze_Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Maze\Maze_Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor.h">
+      <Filter>Maze\Maze_Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster.h">
+      <Filter>Maze\Maze_Header</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -124,6 +124,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="0521_.cpp" />
+    <ClCompile Include="Actor.cpp" />
     <ClCompile Include="Day0521_2.cpp" />
     <ClCompile Include="Day0521_Practice_1.cpp" />
     <ClCompile Include="Day0521_Practice_2.cpp" />
@@ -164,12 +165,14 @@
     <ClInclude Include="Day0602.h" />
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="MazeCommon.h" />
+    <ClInclude Include="Monster.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Utils.h" />
     <ClInclude Include="Weekend_Practice0523.h" />
     <ClInclude Include="Weekend_Practice0529_1.h" />
     <ClInclude Include="Weekend_Practice0529_2.h" />
     <ClInclude Include="메모장.h" />
+    <ClInclude Include="Actor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

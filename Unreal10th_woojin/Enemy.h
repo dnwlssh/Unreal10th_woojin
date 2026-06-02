@@ -1,15 +1,14 @@
 #pragma once
 #include <string>
+#include "Actor.h"
 #include "Utils.h"
 
-struct MazeEnemy
+class MazeEnemy : public Actor
 {
-	std::string Name = "고블린";
-	int Health = 20;
-	int AttackPowerMin = 5;
-	int AttackPowerMax = 10;
-	int Reward = 100;
-
+public:
+	std::string Name = "적";
+	int Reward = 0;
+public:
 	MazeEnemy()
 	{
 		Health = GetRandomRange(15, 25);
@@ -17,6 +16,7 @@ struct MazeEnemy
 		AttackPowerMax = GetRandomRange(8, 12);
 		Reward = GetRandomRange(80, 120);
 	}
+public:
 	MazeEnemy(const std::string& InName, int InLevel)
 		: Name(InName)
 	{

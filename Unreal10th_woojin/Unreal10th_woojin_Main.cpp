@@ -11,6 +11,13 @@
 #include "Weekend_Practice0529_2.h"
 #include "Day0602.h"
 
+#include "Actor.h"
+#include "Utils.h"
+#include "MazeCommon.h"
+#include "Player.h"
+#include "Enemy.h"
+
+
 using namespace std;
 
 int main()
