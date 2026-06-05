@@ -18,6 +18,11 @@
 #include "Enemy.h"
 
 #include "Day0605.h"
+#include "LinkedList.h"
+
+#include "DArray.h"
+
+
 
 
 using namespace std;
@@ -54,5 +59,7 @@ int main()
 	//Homework02_Run();
 	//Day0602();
 
-	Day0605();
+	//Day0605();
+	Day0605 day0605;
+	day0605.TestList();
 }

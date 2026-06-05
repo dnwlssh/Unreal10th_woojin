@@ -67,6 +67,15 @@
     <Filter Include="소스 파일\수업\6월">
       <UniqueIdentifier>{042f2470-50f6-49ce-9843-58932333d46a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DataStructure">
+      <UniqueIdentifier>{28e0103e-af57-4f6e-ba2e-d3af283aab36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DataStructure\DataStructure_Cpp">
+      <UniqueIdentifier>{c167aa66-15d5-4d8d-99ef-52b8e1e8bcfa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DataStructure\DataStructure_Header">
+      <UniqueIdentifier>{1d32b17a-a697-44c0-a019-50cfb972dd2c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Day0521_Practice_1.cpp">
@@ -134,6 +143,12 @@
     </ClCompile>
     <ClCompile Include="Day0602.cpp">
       <Filter>소스 파일\수업\6월</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkedList.cpp">
+      <Filter>DataStructure\DataStructure_Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="DArray.cpp">
+      <Filter>DataStructure\DataStructure_Cpp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -220,6 +235,12 @@
     </ClInclude>
     <ClInclude Include="Day0605.h">
       <Filter>헤더 파일\6월</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkedList.h">
+      <Filter>DataStructure\DataStructure_Header</Filter>
+    </ClInclude>
+    <ClInclude Include="DArray.h">
+      <Filter>DataStructure\DataStructure_Header</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

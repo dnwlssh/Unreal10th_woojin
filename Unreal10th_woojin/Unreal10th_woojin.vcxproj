@@ -125,6 +125,7 @@
   <ItemGroup>
     <ClCompile Include="0521_.cpp" />
     <ClCompile Include="Actor.cpp" />
+    <ClCompile Include="DArray.cpp" />
     <ClCompile Include="Day0521_2.cpp" />
     <ClCompile Include="Day0521_Practice_1.cpp" />
     <ClCompile Include="Day0521_Practice_2.cpp" />
@@ -136,6 +137,7 @@
     <ClCompile Include="Day0529_Pratice.cpp" />
     <ClCompile Include="Day0605.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="LinkedList.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="Unreal10th_woojin_Main.cpp" />
     <ClCompile Include="Day0521_Practice_3.cpp" />
@@ -148,6 +150,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="0521_.h" />
+    <ClInclude Include="DArray.h" />
     <ClInclude Include="Day0520.h" />
     <ClInclude Include="Day0515.h" />
     <ClInclude Include="Day0518.h" />
@@ -166,6 +169,7 @@
     <ClInclude Include="Day0602.h" />
     <ClInclude Include="Day0605.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="LinkedList.h" />
     <ClInclude Include="MazeCommon.h" />
     <ClInclude Include="Monster.h" />
     <ClInclude Include="Player.h" />

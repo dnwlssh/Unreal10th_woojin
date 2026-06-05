@@ -85,7 +85,7 @@ void Weekend0523_Dungeon()
 
         while (!IsGameOver)
         {
-            printf("진행을 위해 아무키나 눌러주세요");
+            printf("진행을 위해 아무키나 눌러주세요\n");
             int Temp = getchar();
 
             system("cls"); // 화면 깨끗이 지우기
