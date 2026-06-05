@@ -17,6 +17,8 @@
 #include "Player.h"
 #include "Enemy.h"
 
+#include "Day0605.h"
+
 
 using namespace std;
 
@@ -47,8 +49,10 @@ int main()
 	//printf("abc 와 abb 비교값 : [%d]\n", Result);
 	//Result = MyStrCmp("abc", "ab");
 	//printf("abc 와 ab 비교값 : [%d]\n", Result);
-	Weekend0523_Dungeon();
+	//Weekend0523_Dungeon();
 	//Day0529_Pratice();
 	//Homework02_Run();
 	//Day0602();
+
+	Day0605();
 }

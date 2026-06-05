@@ -171,6 +171,14 @@ public:
 	void Howling();
 };
 
+// 하울링 인터페이스(0605 수업참조)
+class IHowling
+{
+public:
+	virtual void Howling() = 0;
+	virtual ~IHowling() = default;
+};
+
 // 말
 class Horse : public Animal
 {
@@ -205,6 +213,13 @@ public:
 	void Diving();
 };
 
+class IDiving
+{
+public:
+	virtual void Diving() = 0;
+	virtual ~IDiving() = default;
+};
+
 // 카멜레온
 class Chameleon : public Animal
 {
@@ -220,3 +235,4 @@ public:
 
 // 간단 실습
 // Move함수를 가상함수로 만들어 처리하기
+

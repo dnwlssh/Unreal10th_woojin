@@ -61,13 +61,16 @@
     <Filter Include="Maze\Maze_cpp">
       <UniqueIdentifier>{45149ec5-7f34-4d96-8b78-46b03d045f44}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\수업\5월">
+      <UniqueIdentifier>{f022c98c-5140-4272-983c-f1aef98edfd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\수업\6월">
+      <UniqueIdentifier>{042f2470-50f6-49ce-9843-58932333d46a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Day0521_Practice_1.cpp">
       <Filter>소스 파일\실습</Filter>
-    </ClCompile>
-    <ClCompile Include="Day0521_2.cpp">
-      <Filter>소스 파일\수업</Filter>
     </ClCompile>
     <ClCompile Include="Day0521_Practice_2.cpp">
       <Filter>소스 파일\실습</Filter>
@@ -77,21 +80,6 @@
     </ClCompile>
     <ClCompile Include="0521_.cpp">
       <Filter>소스 파일\개인\공부</Filter>
-    </ClCompile>
-    <ClCompile Include="Day0522.cpp">
-      <Filter>소스 파일\수업</Filter>
-    </ClCompile>
-    <ClCompile Include="Day0526.cpp">
-      <Filter>소스 파일\수업</Filter>
-    </ClCompile>
-    <ClCompile Include="Day0527.cpp">
-      <Filter>소스 파일\수업</Filter>
-    </ClCompile>
-    <ClCompile Include="Day0528.cpp">
-      <Filter>소스 파일\수업</Filter>
-    </ClCompile>
-    <ClCompile Include="Day0529.cpp">
-      <Filter>소스 파일\수업</Filter>
     </ClCompile>
     <ClCompile Include="Day0529_Pratice.cpp">
       <Filter>소스 파일\실습</Filter>
@@ -108,12 +96,6 @@
     <ClCompile Include="Weekend_Practice0529_2.cpp">
       <Filter>소스 파일\과제</Filter>
     </ClCompile>
-    <ClCompile Include="Day0602.cpp">
-      <Filter>소스 파일\수업</Filter>
-    </ClCompile>
-    <ClCompile Include="Utils.cpp">
-      <Filter>소스 파일\수업</Filter>
-    </ClCompile>
     <ClCompile Include="Weekend_Practice0523_Solution.cpp">
       <Filter>소스 파일\과제</Filter>
     </ClCompile>
@@ -125,6 +107,33 @@
     </ClCompile>
     <ClCompile Include="Actor.cpp">
       <Filter>Maze\Maze_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Day0521_2.cpp">
+      <Filter>소스 파일\수업\5월</Filter>
+    </ClCompile>
+    <ClCompile Include="Day0522.cpp">
+      <Filter>소스 파일\수업\5월</Filter>
+    </ClCompile>
+    <ClCompile Include="Day0526.cpp">
+      <Filter>소스 파일\수업\5월</Filter>
+    </ClCompile>
+    <ClCompile Include="Day0527.cpp">
+      <Filter>소스 파일\수업\5월</Filter>
+    </ClCompile>
+    <ClCompile Include="Day0528.cpp">
+      <Filter>소스 파일\수업\5월</Filter>
+    </ClCompile>
+    <ClCompile Include="Day0529.cpp">
+      <Filter>소스 파일\수업\5월</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>소스 파일\수업\5월</Filter>
+    </ClCompile>
+    <ClCompile Include="Day0605.cpp">
+      <Filter>소스 파일\수업\6월</Filter>
+    </ClCompile>
+    <ClCompile Include="Day0602.cpp">
+      <Filter>소스 파일\수업\6월</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -208,6 +217,9 @@
     </ClInclude>
     <ClInclude Include="Monster.h">
       <Filter>Maze\Maze_Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Day0605.h">
+      <Filter>헤더 파일\6월</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
