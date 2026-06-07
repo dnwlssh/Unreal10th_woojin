@@ -147,6 +147,7 @@
     <ClCompile Include="Weekend_Practice0529_1.cpp" />
     <ClCompile Include="Weekend_Practice0529_2.cpp" />
     <ClCompile Include="Day0602.cpp" />
+    <ClCompile Include="Weekend_Practice0605_BattleShip.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="0521_.h" />
@@ -177,6 +178,7 @@
     <ClInclude Include="Weekend_Practice0523.h" />
     <ClInclude Include="Weekend_Practice0529_1.h" />
     <ClInclude Include="Weekend_Practice0529_2.h" />
+    <ClInclude Include="Weekend_Practice0605_BattleShip.h" />
     <ClInclude Include="메모장.h" />
     <ClInclude Include="Actor.h" />
   </ItemGroup>

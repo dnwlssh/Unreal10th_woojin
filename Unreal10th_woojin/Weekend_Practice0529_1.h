@@ -10,7 +10,7 @@ void Homework01_Run();
 int CheckYearDate(int year);
 enum MonthName
 {
-	Jan = 1,
+	Jan	= 1,
 	Feb,
 	Mar,
 	Apr,

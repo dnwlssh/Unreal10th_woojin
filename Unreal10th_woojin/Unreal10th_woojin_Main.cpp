@@ -21,7 +21,7 @@
 #include "LinkedList.h"
 
 #include "DArray.h"
-
+#include "Weekend_Practice0605_BattleShip.h"
 
 
 
@@ -60,6 +60,9 @@ int main()
 	//Day0602();
 
 	//Day0605();
-	Day0605 day0605;
-	day0605.TestList();
+	//Day0605 day0605;
+	//day0605.TestList();
+
+	BattleShipGame game;
+	game.play();
 }
