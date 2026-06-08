@@ -1,5 +1,6 @@
 #include "LinkedList.h"
 #include <stdio.h>
+#include "Weekend_Practice0605_BattleShip_Solution.h"
 
 LinkedList::~LinkedList()
 {
@@ -7,7 +8,7 @@ LinkedList::~LinkedList()
 	Clear();
 }
 
-void LinkedList::Add(int InData)
+void LinkedList::Add(int InData)                                                                                                                                                         
 {
 	// InData가 들어간 노드를 만든다.
 	// 맨 마지막으로 이동해서 맨 마지막 노드의 Next를 새 노드로 지정한다. 
@@ -34,7 +35,6 @@ void LinkedList::Add(int InData)
 
 	delete Node;
 	Node = nullptr;
-	
 }
 void LinkedList::InsertAt(int InData, int InPosition)
 {
@@ -189,6 +189,10 @@ ListNode* LinkedList::Search(int InData) const
 	return nullptr;
 }
 
+
+
+
+
 void LinkedList::Clear()
 {
 	// Head가 빌때 까지
@@ -198,6 +202,8 @@ void LinkedList::Clear()
 		RemoveAt(0);
 	}
 }
+
+
 
 void LinkedList::PrintList() const
 {

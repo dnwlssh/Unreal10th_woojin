@@ -137,8 +137,13 @@
     <ClCompile Include="Day0529_Pratice.cpp" />
     <ClCompile Include="Day0605.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="HiddenMap.cpp" />
     <ClCompile Include="LinkedList.cpp" />
+    <ClCompile Include="Map.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="PlayerMap.cpp" />
+    <ClCompile Include="Ship.cpp" />
+    <ClCompile Include="ShipManager.cpp" />
     <ClCompile Include="Unreal10th_woojin_Main.cpp" />
     <ClCompile Include="Day0521_Practice_3.cpp" />
     <ClCompile Include="Utils.cpp" />
@@ -147,7 +152,6 @@
     <ClCompile Include="Weekend_Practice0529_1.cpp" />
     <ClCompile Include="Weekend_Practice0529_2.cpp" />
     <ClCompile Include="Day0602.cpp" />
-    <ClCompile Include="Weekend_Practice0605_BattleShip.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="0521_.h" />
@@ -170,10 +174,16 @@
     <ClInclude Include="Day0602.h" />
     <ClInclude Include="Day0605.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="HiddenMap.h" />
     <ClInclude Include="LinkedList.h" />
+    <ClInclude Include="Map.h" />
     <ClInclude Include="MazeCommon.h" />
     <ClInclude Include="Monster.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="PlayerMap.h" />
+    <ClInclude Include="Position.h" />
+    <ClInclude Include="Ship.h" />
+    <ClInclude Include="ShipManager.h" />
     <ClInclude Include="Utils.h" />
     <ClInclude Include="Weekend_Practice0523.h" />
     <ClInclude Include="Weekend_Practice0529_1.h" />
@@ -181,6 +191,7 @@
     <ClInclude Include="Weekend_Practice0605_BattleShip.h" />
     <ClInclude Include="메모장.h" />
     <ClInclude Include="Actor.h" />
+    <ClInclude Include="Weekend_Practice0605_BattleShip_Solution.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

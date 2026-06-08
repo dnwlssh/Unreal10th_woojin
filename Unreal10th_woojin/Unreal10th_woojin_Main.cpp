@@ -23,6 +23,7 @@
 #include "DArray.h"
 #include "Weekend_Practice0605_BattleShip.h"
 
+#include "Weekend_Practice0605_BattleShip_Solution.h"
 
 
 using namespace std;

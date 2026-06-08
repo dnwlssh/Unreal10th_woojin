@@ -76,6 +76,9 @@
     <Filter Include="DataStructure\DataStructure_Header">
       <UniqueIdentifier>{1d32b17a-a697-44c0-a019-50cfb972dd2c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="BattleShip">
+      <UniqueIdentifier>{ff3ebb8d-d189-4973-bf2f-74e2eb18b579}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Day0521_Practice_1.cpp">
@@ -149,6 +152,24 @@
     </ClCompile>
     <ClCompile Include="DArray.cpp">
       <Filter>DataStructure\DataStructure_Cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Weekend_Practice0605_BattleShip_Solution.cpp">
+      <Filter>BattleShip</Filter>
+    </ClCompile>
+    <ClCompile Include="HiddenMap.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerMap.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Ship.cpp">
+      <Filter>BattleShip</Filter>
+    </ClCompile>
+    <ClCompile Include="ShipManager.cpp">
+      <Filter>BattleShip</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -241,6 +262,27 @@
     </ClInclude>
     <ClInclude Include="DArray.h">
       <Filter>DataStructure\DataStructure_Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Weekend_Practice0605_BattleShip_Solution.h">
+      <Filter>BattleShip</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>BattleShip</Filter>
+    </ClInclude>
+    <ClInclude Include="ShipManager.h">
+      <Filter>BattleShip</Filter>
+    </ClInclude>
+    <ClInclude Include="Ship.h">
+      <Filter>BattleShip</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerMap.h">
+      <Filter>BattleShip</Filter>
+    </ClInclude>
+    <ClInclude Include="HiddenMap.h">
+      <Filter>BattleShip</Filter>
+    </ClInclude>
+    <ClInclude Include="Position.h">
+      <Filter>BattleShip</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
