@@ -153,9 +153,6 @@
     <ClCompile Include="DArray.cpp">
       <Filter>DataStructure\DataStructure_Cpp</Filter>
     </ClCompile>
-    <ClCompile Include="Weekend_Practice0605_BattleShip_Solution.cpp">
-      <Filter>BattleShip</Filter>
-    </ClCompile>
     <ClCompile Include="HiddenMap.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -170,6 +167,9 @@
     </ClCompile>
     <ClCompile Include="ShipManager.cpp">
       <Filter>BattleShip</Filter>
+    </ClCompile>
+    <ClCompile Include="Day0611.cpp">
+      <Filter>소스 파일\수업\6월</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -283,6 +283,12 @@
     </ClInclude>
     <ClInclude Include="Position.h">
       <Filter>BattleShip</Filter>
+    </ClInclude>
+    <ClInclude Include="Weekend_Practice0605_BattleShip.h">
+      <Filter>헤더 파일\과제</Filter>
+    </ClInclude>
+    <ClInclude Include="Day0611.h">
+      <Filter>헤더 파일\6월</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

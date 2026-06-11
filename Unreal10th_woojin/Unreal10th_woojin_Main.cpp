@@ -25,6 +25,8 @@
 
 #include "Weekend_Practice0605_BattleShip_Solution.h"
 
+#include "Day0611.h"
+
 
 using namespace std;
 
@@ -64,6 +66,8 @@ int main()
 	//Day0605 day0605;
 	//day0605.TestList();
 
-	BattleShipGame game;
-	game.play();
+	/*BattleShipGame game;
+	game.play();*/
+	Day0611 day0611;
+	day0611.TestSTL_Algorithm();
 }
